@@ -3,65 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>review for muay y shop - ระบบเครดิตและรีวิวร้านค้า</title>
+    <title>review for muay y shop ✨</title>
     <style>
         :root {
-            --primary-pink: #ffb5c2;
-            --soft-cream: #fff9f5;
-            --container-bg: #ffffff;
-            --accent-pink: #ff8fab;
-            --hover-pink: #fb6f92;
-            --text-color: #5c4d54;
-            --border-color: #ffccd5;
+            --bg-cream: #fffaf5;
+            --card-white: #ffffff;
+            --pink-pastel: #ffccd5;
+            --pink-deep: #ff8fab;
+            --pink-hover: #fb6f92;
+            --purple-soft: #f3e8ff;
+            --text-main: #6d5959;
+            --text-sub: #9e8282;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--soft-cream);
-            color: var(--text-color);
+            background-color: var(--bg-cream);
+            color: var(--text-main);
             margin: 0;
-            padding: 20px;
+            padding: 25px 15px;
+            background-image: radial-gradient(#ffccd5 1px, transparent 1px);
+            background-size: 24px 24px; /* ลายจุดพาสเทลจางๆ น่ารักๆ */
         }
 
         .container {
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
-            background: var(--container-bg);
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(255, 181, 194, 0.25);
-            border: 2px solid #ffe5ec;
+            background: var(--card-white);
+            padding: 30px;
+            border-radius: 35px;
+            box-shadow: 0 10px 30px rgba(255, 179, 198, 0.25);
+            border: 3px solid #ffe5ec;
+            position: relative;
         }
 
-        /* ส่วนโปรไฟล์ร้าน */
+        /* ปุ่มเปิดหลังบ้านมุมขวาบนแบบน่ารัก */
+        .admin-toggle {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+
+        .admin-toggle button {
+            background-color: var(--purple-soft);
+            color: #8b5cf6;
+            border: 2px dashed #c4b5fd;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .admin-toggle button:hover {
+            background-color: #ede9fe;
+        }
+
+        /* ส่วนหัวโปรไฟล์ร้านแบบใหม่ ละมุนตา */
         .store-header {
             text-align: center;
-            border-bottom: 2px dashed var(--primary-pink);
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            padding-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .store-avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 12px;
         }
 
         .store-avatar {
-            width: 100px;
-            height: 100px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--primary-pink);
-            margin-bottom: 10px;
+            border: 5px solid var(--pink-pastel);
+            box-shadow: 0 5px 15px rgba(255, 143, 171, 0.3);
         }
 
         h1 {
-            margin: 10px 0 5px;
+            margin: 5px 0 10px;
             color: #d85a7d;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            font-weight: 800;
             letter-spacing: 0.5px;
         }
 
-        .contact-info {
+        .contact-box {
+            background: #fff0f3;
+            border-radius: 20px;
+            padding: 12px 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px dashed var(--pink-deep);
             font-size: 0.95rem;
-            color: #8c737d;
-            margin-bottom: 12px;
-            line-height: 1.6;
+            color: #8c5867;
         }
 
         .rating-badge {
@@ -69,51 +106,30 @@
             font-weight: bold;
             color: #b54569;
             background: #ffe5ec;
-            padding: 6px 16px;
-            border-radius: 20px;
+            padding: 8px 20px;
+            border-radius: 25px;
             display: inline-block;
-            margin-top: 5px;
+            box-shadow: 0 4px 10px rgba(255, 181, 194, 0.4);
         }
 
-        /* ปุ่มเปิดระบบหลังบ้าน */
-        .admin-toggle {
-            text-align: right;
-            margin-bottom: 15px;
-        }
-
-        .admin-toggle button, button {
-            background-color: var(--accent-pink);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        button:hover {
-            background-color: var(--hover-pink);
-        }
-
-        /* ส่วนหลังบ้าน (ซ่อนไว้ก่อน) */
+        /* ส่วนหลังบ้านแอดมิน */
         #admin-panel {
-            background: #fff0f3;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
+            background: #fff5f7;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 25px;
             display: none;
-            border: 1px solid var(--primary-pink);
+            border: 2px solid var(--pink-pastel);
         }
 
-        /* ฟอร์มต่างๆ */
         .form-group {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            text-align: left;
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             font-weight: bold;
             font-size: 0.9rem;
             color: #735d67;
@@ -121,45 +137,106 @@
 
         input[type="text"], select, textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            padding: 12px;
+            border: 2px solid #ffccd5;
+            border-radius: 15px;
             box-sizing: border-box;
             font-family: inherit;
-            background-color: #fffcfd;
+            background-color: #ffffff;
+            color: var(--text-main);
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input[type="text"]:focus, select:focus, textarea:focus {
+            border-color: var(--pink-deep);
         }
 
         textarea {
             resize: vertical;
-            height: 80px;
+            height: 90px;
         }
 
-        /* รายการรีวิว */
-        .review-card {
+        button.main-btn {
+            background-color: var(--pink-deep);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(255, 143, 171, 0.4);
+            transition: 0.2s;
+        }
+
+        button.main-btn:hover {
+            background-color: var(--pink-hover);
+            transform: translateY(-2px);
+        }
+
+        /* ฟอร์มฝากรีวิวแบบกล่องการ์ดน่ารัก */
+        .review-form-box {
             background: #fff9fa;
-            border: 1px solid #ffd6e0;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
+            padding: 25px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            border: 2px solid #ffe5ec;
+            box-shadow: inset 0 2px 8px rgba(255, 229, 236, 0.5);
+        }
+
+        .review-form-box h3 {
+            margin-top: 0;
+            color: #d85a7d;
+            text-align: center;
+        }
+
+        /* รายการรีวิวสไตล์การ์ดลอยละล่อง */
+        .section-title {
+            text-align: center;
+            color: #d85a7d;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .review-card {
+            background: #ffffff;
+            border: 2px solid #ffe5ec;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
             position: relative;
+            box-shadow: 0 6px 15px rgba(255, 214, 224, 0.2);
+            transition: 0.2s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 181, 194, 0.3);
         }
 
         .review-img {
-            max-width: 150px;
-            border-radius: 8px;
-            margin-top: 10px;
+            max-width: 160px;
+            border-radius: 12px;
+            margin-top: 12px;
             display: block;
-            border: 1px solid #eee;
+            border: 2px dashed var(--pink-pastel);
         }
 
         .delete-btn {
             background-color: #ff4d6d;
-            padding: 4px 10px;
-            font-size: 0.8rem;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            border-radius: 12px;
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 20px;
+            right: 20px;
             display: none;
+            cursor: pointer;
+            font-weight: bold;
         }
 
         .show-delete .delete-btn {
@@ -172,12 +249,12 @@
 <div class="container" id="app-container">
     <!-- ปุ่มเข้าหลังบ้าน -->
     <div class="admin-toggle">
-        <button onclick="toggleAdmin()">⚙️ จัดการหลังบ้าน</button>
+        <button onclick="toggleAdmin()">⚙️ หลังบ้าน</button>
     </div>
 
     <!-- ส่วนหลังบ้าน (Admin Dashboard) -->
     <div id="admin-panel">
-        <h3>🛠️ ระบบหลังบ้านแอดมิน</h3>
+        <h3>🛠️ ระบบจัดการร้านค้า</h3>
         <div class="form-group">
             <label>เปลี่ยนชื่อร้าน:</label>
             <input type="text" id="admin-store-name" placeholder="ชื่อร้านค้า">
@@ -186,62 +263,65 @@
             <label>เปลี่ยนรูปโปรไฟล์ร้าน (URL รูปภาพ):</label>
             <input type="text" id="admin-store-img" placeholder="วางลิงก์รูปภาพโปรไฟล์">
         </div>
-        <button onclick="updateStoreInfo()">บันทึกข้อมูลร้าน</button>
-        <p style="font-size: 0.8rem; color: #8c737d; margin-top: 5px;">*โหมดแอดมินเปิดใช้งาน: สามารถกดปุ่ม "ลบ" ที่รีวิวเพื่อจัดการคอมเม้นต์ปลอมได้</p>
+        <button class="main-btn" onclick="updateStoreInfo()">บันทึกข้อมูลร้าน ✨</button>
+        <p style="font-size: 0.8rem; color: var(--text-sub); margin-top: 8px; text-align: center;">*โหมดแอดมิน: สามารถกดปุ่ม "ลบรีวิว" สีแดงที่การ์ดรีวิวได้เลย</p>
     </div>
 
     <!-- โปรไฟล์ร้านค้าหลัก -->
     <div class="store-header">
-        <img id="store-avatar" src="https://i.imgur.com/6VBx3io.png" alt="Store Logo" class="store-avatar">
-        <h1 id="store-title">review for muay y shop</h1>
-        <div class="contact-info">
-            fb : s𑄝l݂mua݁yiꫀིྀა ィ<br>
-            id line : @352gmaft
+        <div class="store-avatar-wrapper">
+            <img id="store-avatar" src="https://i.imgur.com/6VBx3io.png" alt="Store Logo" class="store-avatar">
         </div>
-        <div class="rating-badge">
-            ⭐ <span id="avg-rating">0.0</span> / 5.0 (<span id="total-reviews">0</span> รีวิว)
+        <h1 id="store-title">review for muay y shop</h1>
+        <div class="contact-box">
+            ✨ fb : s𑄝l݂mua݁yiꫀིྀა ィ<br>
+            💬 id line : @352gmaft
+        </div>
+        <div>
+            <div class="rating-badge">
+                ⭐ <span id="avg-rating">0.0</span> / 5.0 (<span id="total-reviews">0</span> รีวิว)
+            </div>
         </div>
     </div>
 
     <!-- ฟอร์มส่งรีวิวจากลูกค้า -->
-    <div style="background: #fff4f6; padding: 15px; border-radius: 12px; margin-bottom: 25px; border: 1px solid #ffccd5;">
-        <h3>💬 ฝากเครดิต / เขียนรีวิว</h3>
+    <div class="review-form-box">
+        <h3>💌 ฝากเครดิต & เขียนรีวิวความประทับใจ</h3>
         <form id="review-form" onsubmit="handleReviewSubmit(event)">
             <div class="form-group">
-                <label>ชื่อลูกค้า / ลิงก์เครดิต (เช่น เฟซบุ๊ก หรือ IG):</label>
-                <input type="text" id="cust-name" placeholder="เช่น คุณเอ็ม (FB: Em xx)" required>
+                <label>ชื่อลูกค้า / ลิงก์เครดิต (เฟซบุ๊ก หรือ IG):</label>
+                <input type="text" id="cust-name" placeholder="เช่น คุณมิน (FB: Min Min)" required>
             </div>
             <div class="form-group">
-                <label>ให้คะแนนความพึงพอใจ:</label>
+                <label>ระดับความประทับใจ:</label>
                 <select id="cust-rating">
-                    <option value="5">⭐⭐⭐⭐⭐ 5 ดาว - บริการดีมาก ส่งไว เชื่อถือได้</option>
-                    <option value="4">⭐⭐⭐⭐ 4 ดาว - ดีมาก</option>
+                    <option value="5">⭐⭐⭐⭐⭐ 5 ดาว - น่ารัก บริการดีมากก!</option>
+                    <option value="4">⭐⭐⭐⭐ 4 ดาว - ดีมาก ส่งไว</option>
                     <option value="3">⭐⭐⭐ 3 ดาว - ปานกลาง</option>
                     <option value="2">⭐⭐ 2 ดาว - ควรปรับปรุง</option>
                     <option value="1">⭐ 1 ดาว - แย่มาก</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>ข้อความรีวิว:</label>
-                <textarea id="cust-comment" placeholder="เขียนความประทับใจ หรือหลักฐานการโอน..." required></textarea>
+                <label>ข้อความรีวิว / หลักฐาน:</label>
+                <textarea id="cust-comment" placeholder="พิมพ์รีวิว หรือความประทับใจตรงนี้ได้เลยน้า..." required></textarea>
             </div>
             <div class="form-group">
-                <label>แนบรูปภาพรีวิว / สลิปหลักฐาน:</label>
-                <input type="file" id="cust-image" accept="image/*">
+                <label>แนบรูปภาพรีวิว / สลิป:</label>
+                <input type="file" id="cust-image" accept="image/*" style="padding: 8px; background: white; border-radius: 12px; border: 2px dashed #ffccd5;">
             </div>
-            <button type="submit">ส่งรีวิว / เพิ่มเครดิต</button>
+            <button type="submit" class="main-btn">ส่งรีวิวเพิ่มเครดิต 💖</button>
         </form>
     </div>
 
     <!-- รายการแสดงรีวิวทั้งหมด -->
-    <h3>📜 รายการเครดิตและรีวิวทั้งหมด</h3>
+    <h3 class="section-title">☁️ รีวิวจากลูกค้าที่น่ารักทั้งหมด ☁️️</h3>
     <div id="reviews-list">
         <!-- รายการรีวิวจะแสดงตรงนี้อัตโนมัติ -->
     </div>
 </div>
 
 <script>
-    // ข้อมูลเริ่มต้น
     let storeData = {
         name: "review for muay y shop",
         image: "https://i.imgur.com/6VBx3io.png"
@@ -251,14 +331,13 @@
         {
             name: "คุณมีน (IG: meen_Review)",
             rating: 5,
-            comment: "ร้านนี้บริการดีมากค่ะ ส่งจริงไม่มีโกง ไว้มาอุดหนุนอีกแน่นอนค่ะ!",
+            comment: "ร้านนี้บริการดีมากค่ะ ส่งจริงไม่มีโกง ไว้มาอุดหนุนอีกแน่นอนค่ะ! 💖",
             image: ""
         }
     ];
 
     let isAdminLoggedIn = false;
 
-    // ฟังก์ชันเปิด/ปิดหลังบ้าน (รหัสผ่าน 1234)
     function toggleAdmin() {
         if (!isAdminLoggedIn) {
             let pass = prompt("กรุณากรอกรหัสผ่านแอดมิน (ตั้งค่าไว้: 1234):");
@@ -268,20 +347,19 @@
                 document.getElementById('app-container').classList.add('show-delete');
                 document.getElementById('admin-store-name').value = storeData.name;
                 document.getElementById('admin-store-img').value = storeData.image;
-                alert("เข้าสู่ระบบหลังบ้านสำเร็จ!");
+                alert("เข้าสู่ระบบหลังบ้านสำเร็จค่า! ✨");
             } else if (pass !== null) {
-                alert("รหัสผ่านไม่ถูกต้อง!");
+                alert("รหัสผ่านไม่ถูกต้องน้า!");
             }
         } else {
             isAdminLoggedIn = false;
             document.getElementById('admin-panel').style.display = 'none';
             document.getElementById('app-container').classList.remove('show-delete');
-            alert("ออกจากระบบหลังบ้านแล้ว");
+            alert("ออกจากระบบหลังบ้านแล้วจ้า");
         }
         renderReviews();
     }
 
-    // อัปเดตข้อมูลร้าน
     function updateStoreInfo() {
         let newName = document.getElementById('admin-store-name').value;
         let newImg = document.getElementById('admin-store-img').value;
@@ -290,10 +368,9 @@
         
         document.getElementById('store-title').innerText = storeData.name;
         document.getElementById('store-avatar').src = storeData.image;
-        alert("อัปเดตข้อมูลร้านเรียบร้อย!");
+        alert("อัปเดตข้อมูลร้านเรียบร้อยแล้วค่ะ! 🎉");
     }
 
-    // จัดการเมื่อกดส่งรีวิว
     function handleReviewSubmit(event) {
         event.preventDefault();
         
@@ -318,24 +395,22 @@
     function resetFormAndRender() {
         document.getElementById('review-form').reset();
         renderReviews();
-        alert("ส่งรีวิวสำเร็จ ขอบคุณมากค่ะ! ✨");
+        alert("ส่งรีวิวสำเร็จ ขอบคุณมากๆ เลยนะคะ! ✨💖");
     }
 
-    // ลบรีวิว (เฉพาะแอดมิน)
     function deleteReview(index) {
-        if (confirm("คุณต้องการลบคอมเม้นต์นี้ใช่หรือไม่?")) {
+        if (confirm("ต้องการลบคอมเม้นต์นี้ใช่ไหมคะ?")) {
             reviews.splice(index, 1);
             renderReviews();
         }
     }
 
-    // เรนเดอร์หน้าจอและคำนวณดาวเฉลี่ย
     function renderReviews() {
         let listContainer = document.getElementById('reviews-list');
         listContainer.innerHTML = "";
 
         if (reviews.length === 0) {
-            listContainer.innerHTML = "<p style='text-align: center; color: #8c737d;'>ยังไม่มีรีวิวในขณะนี้ เป็นคนแรกที่รีวิวเลย!</p>";
+            listContainer.innerHTML = "<p style='text-align: center; color: var(--text-sub); padding: 20px;'>ยังไม่มีรีวิวในขณะนี้ มาเป็นคนแรกที่ทิ้งเครดิตกันเถอะ! ✨</p>";
             document.getElementById('avg-rating').innerText = "0.0";
             document.getElementById('total-reviews').innerText = "0";
             return;
@@ -351,10 +426,10 @@
             let card = document.createElement('div');
             card.className = "review-card";
             card.innerHTML = `
-                <button class="delete-btn" onclick="deleteReview(${index})">ลบรีวิว</button>
-                <strong>👤 ${rev.name}</strong>
-                <div style="margin: 5px 0;">${stars}</div>
-                <p style="margin: 5px 0 10px;">${rev.comment}</p>
+                <button class="delete-btn" onclick="deleteReview(${index})">🗑️️ ลบรีวิว</button>
+                <div style="font-weight: bold; color: #d85a7d; font-size: 1.05rem;">👤 ${rev.name}</div>
+                <div style="margin: 6px 0;">${stars}</div>
+                <p style="margin: 8px 0 12px; line-height: 1.5;">${rev.comment}</p>
                 ${imgTag}
             `;
             listContainer.appendChild(card);
@@ -365,7 +440,6 @@
         document.getElementById('total-reviews').innerText = reviews.length;
     }
 
-    // รันครั้งแรกเมื่อเปิดเว็บ
     renderReviews();
 </script>
 
