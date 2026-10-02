@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ginshopz - ระบบเครดิตและรีวิวร้านค้า</title>
+    <style>
+        :root {
+            --primary-pink: #ffb3c6;
+            --light-pink: #fff0f3;
+            --accent-purple: #dfceed;
+            --text-color: #4a4a4a;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-pink);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(255, 179, 198, 0.3);
+        }
+
+        /* ส่วนโปรไฟล์ร้าน */
+        .store-header {
+            text-align: center;
+            border-bottom: 2px dashed var(--primary-pink);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .store-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-pink);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 10px 0 5px;
+            color: #d87093;
+        }
+
+        .rating-badge {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e65c85;
+            background: var(--accent-purple);
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* ปุ่มเปิดระบบหลังบ้าน */
+        .admin-toggle {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        .admin-toggle button, button {
+            background-color: #ff8fab;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #fb6f92;
+        }
+
+        /* ส่วนหลังบ้าน (ซ่อนไว้ก่อน) */
+        #admin-panel {
+            background: #fdf2f4;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: none;
+            border: 1px solid var(--primary-pink);
+        }
+
+        /* ฟอร์มต่างๆ */
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ffccd5;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        /* รายการรีวิว */
+        .review-card {
+            background: #faf9fb;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .review-img {
+            max-width: 150px;
+            border-radius: 8px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .delete-btn {
+            background-color: #ff4d6d;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: none;
+        }
+
+        .show-delete .delete-btn {
+            display: inline-block;
+        }
+
+        .credit-link {
+            color: #d87093;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .credit-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="app-container">
+    <!-- ปุ่มเข้าหลังบ้าน -->
+    <div class="admin-toggle">
+        <button onclick="toggleAdmin()">⚙️ จัดการหลังบ้าน</button>
+    </div>
+
+    <!-- ส่วนหลังบ้าน (Admin Dashboard) -->
+    <div id="admin-panel">
+        <h3>🛠️ ระบบหลังบ้านแอดมิน</h3>
+        <div class="form-group">
+            <label>เปลี่ยนชื่อร้าน:</label>
+            <input type="text" id="admin-store-name" placeholder="ชื่อร้านค้า">
+        </div>
+        <div class="form-group">
+            <label>เปลี่ยนรูปโปรไฟล์ร้าน (URL รูปภาพ):</label>
+            <input type="text" id="admin-store-img" placeholder="วางลิงก์รูปภาพโปรไฟล์">
+        </div>
+        <button onclick="updateStoreInfo()">บันทึกข้อมูลร้าน</button>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">*โหมดแอดมินเปิดใช้งาน: สามารถกดปุ่ม "ลบ" ที่รีวิวเพื่อจัดการคอมเม้นต์ปลอมได้</p>
+    </div>
+
+    <!-- โปรไฟล์ร้านค้าหลัก -->
+    <div class="store-header">
+        <img id="store-avatar" src="https://i.imgur.com/6VBx3io.png" alt="Store Logo" class="store-avatar">
+        <h1 id="store-title">Ginshopz Official</h1>
+        <p>แหล่งรวมเครดิตและความประทับใจจากลูกค้าตัวจริง ✨</p>
+        <div class="rating-badge">
+            ⭐ <span id="avg-rating">0.0</span> / 5.0 (<span id="total-reviews">0</span> รีวิว)
+        </div>
+    </div>
+
+    <!-- ฟอร์มส่งรีวิวจากลูกค้า -->
+    <div style="background: #fdf8fa; padding: 15px; border-radius: 12px; margin-bottom: 25px;">
+        <h3>💬 ฝากเครดิต / เขียนรีวิว</h3>
+        <form id="review-form" onsubmit="handleReviewSubmit(event)">
+            <div class="form-group">
+                <label>ชื่อลูกค้า / ลิงก์เครดิต (เช่น เฟซบุ๊ก หรือ IG):</label>
+                <input type="text" id="cust-name" placeholder="เช่น คุณเอ็ม (FB: Em xx)" required>
+            </div>
+            <div class="form-group">
+                <label>ให้คะแนนความพึงพอใจ:</label>
+                <select id="cust-rating">
+                    <option value="5">⭐⭐⭐⭐⭐ 5 ดาว - บริการดีมาก ส่งไว เชื่อถือได้</option>
+                    <option value="4">⭐⭐⭐⭐ 4 ดาว - ดีมาก</option>
+                    <option value="3">⭐⭐⭐ 3 ดาว - ปานกลาง</option>
+                    <option value="2">⭐⭐ 2 ดาว - ควรปรับปรุง</option>
+                    <option value="1">⭐ 1 ดาว - แย่มาก</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>ข้อความรีวิว:</label>
+                <textarea id="cust-comment" placeholder="เขียนความประทับใจ หรือหลักฐานการโอน..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label>แนบรูปภาพรีวิว / สลิปหลักฐาน:</label>
+                <input type="file" id="cust-image" accept="image/*">
+            </div>
+            <button type="submit">ส่งรีวิว / เพิ่มเครดิต</button>
+        </form>
+    </div>
+
+    <!-- รายการแสดงรีวิวทั้งหมด -->
+    <h3>📜 รายการเครดิตและรีวิวทั้งหมด</h3>
+    <div id="reviews-list">
+        <!-- รายการรีวิวจะแสดงตรงนี้อัตโนมัติ -->
+    </div>
+</div>
+
+<script>
+    // ข้อมูลเริ่มต้น (เก็บไว้ในหน่วยความจำชั่วคราว)
+    let storeData = {
+        name: "Ginshopz Official",
+        image: "https://i.imgur.com/6VBx3io.png"
+    };
+
+    let reviews = [
+        {
+            name: "คุณมีน (IG: meen_Review)",
+            rating: 5,
+            comment: "ร้านนี้บริการดีมากค่ะ ส่งจริงไม่มีโกง ไว้มาอุดหนุนอีกแน่นอนค่ะ!",
+            image: ""
+        }
+    ];
+
+    let isAdminLoggedIn = false;
+
+    // ฟังก์ชันเปิด/ปิดหลังบ้าน (ใส่รหัสผ่านง่ายๆ เช่น 1234)
+    function toggleAdmin() {
+        if (!isAdminLoggedIn) {
+            let pass = prompt("กรุณากรอกรหัสผ่านแอดมิน (ตั้งค่าไว้: 1234):");
+            if (pass === "1234") {
+                isAdminLoggedIn = true;
+                document.getElementById('admin-panel').style.display = 'block';
+                document.getElementById('app-container').classList.add('show-delete');
+                document.getElementById('admin-store-name').value = storeData.name;
+                document.getElementById('admin-store-img').value = storeData.image;
+                alert("เข้าสู่ระบบหลังบ้านสำเร็จ!");
+            } else if (pass !== null) {
+                alert("รหัสผ่านไม่ถูกต้อง!");
+            }
+        } else {
+            isAdminLoggedIn = false;
+            document.getElementById('admin-panel').style.display = 'none';
+            document.getElementById('app-container').classList.remove('show-delete');
+            alert("ออกจากระบบหลังบ้านแล้ว");
+        }
+        renderReviews();
+    }
+
+    // อัปเดตข้อมูลร้าน
+    function updateStoreInfo() {
+        let newName = document.getElementById('admin-store-name').value;
+        let newImg = document.getElementById('admin-store-img').value;
+        if(newName) storeData.name = newName;
+        if(newImg) storeData.image = newImg;
+        
+        document.getElementById('store-title').innerText = storeData.name;
+        document.getElementById('store-avatar').src = storeData.image;
+        alert("อัปเดตข้อมูลร้านเรียบร้อย!");
+    }
+
+    // จัดการเมื่อกดส่งรีวิว
+    function handleReviewSubmit(event) {
+        event.preventDefault();
+        
+        let name = document.getElementById('cust-name').value;
+        let rating = Number(document.getElementById('cust-rating').value);
+        let comment = document.getElementById('cust-comment').value;
+        let imageInput = document.getElementById('cust-image');
+
+        if (imageInput.files && imageInput.files[0]) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                reviews.unshift({ name, rating, comment, image: e.target.result });
+                resetFormAndRender();
+            }
+            reader.readAsDataURL(imageInput.files[0]);
+        } else {
+            reviews.unshift({ name, rating, comment, image: "" });
+            resetFormAndRender();
+        }
+    }
+
+    function resetFormAndRender() {
+        document.getElementById('review-form').reset();
+        renderReviews();
+        alert("ส่งรีวิวสำเร็จ ขอบคุณมากค่ะ! ✨");
+    }
+
+    // ลบรีวิว (เฉพาะแอดมิน)
+    function deleteReview(index) {
+        if (confirm("คุณต้องการลบคอมเม้นต์นี้ใช่หรือไม่?")) {
+            reviews.splice(index, 1);
+            renderReviews();
+        }
+    }
+
+    // เรนเดอร์หน้าจอและคำนวณดาวเฉลี่ย
+    function renderReviews() {
+        let listContainer = document.getElementById('reviews-list');
+        listContainer.innerHTML = "";
+
+        if (reviews.length === 0) {
+            listContainer.innerHTML = "<p style='text-align: center; color: #888;'>ยังไม่มีรีวิวในขณะนี้ เป็นคนแรกที่รีวิวเลย!</p>";
+            document.getElementById('avg-rating').innerText = "0.0";
+            document.getElementById('total-reviews').innerText = "0";
+            return;
+        }
+
+        let sumRating = 0;
+        reviews.forEach((rev, index) => {
+            sumRating += rev.rating;
+            
+            let stars = "⭐".repeat(rev.rating);
+            let imgTag = rev.image ? `<img src="${rev.image}" class="review-img" alt="รูปรีวิว">` : "";
+            
+            let card = document.createElement('div');
+            card.className = "review-card";
+            card.innerHTML = `
+                <button class="delete-btn" onclick="deleteReview(${index})">ลบรีวิว</button>
+                <strong>👤 ${rev.name}</strong>
+                <div style="margin: 5px 0;">${stars}</div>
+                <p style="margin: 5px 0 10px;">${rev.comment}</p>
+                ${imgTag}
+            `;
+            listContainer.appendChild(card);
+        });
+
+        let avg = (sumRating / reviews.length).toFixed(1);
+        document.getElementById('avg-rating').innerText = avg;
+        document.getElementById('total-reviews').innerText = reviews.length;
+    }
+
+    // รันครั้งแรกเมื่อเปิดเว็บ
+    renderReviews();
+</script>
+
+</body>
+</html>
