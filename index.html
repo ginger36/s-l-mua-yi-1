@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ginshopz - ระบบเครดิตและรีวิวร้านค้า</title>
+    <title>review for muay y shop - ระบบเครดิตและรีวิวร้านค้า</title>
     <style>
         :root {
-            --primary-pink: #ffb3c6;
-            --light-pink: #fff0f3;
-            --accent-purple: #dfceed;
-            --text-color: #4a4a4a;
-            --white: #ffffff;
+            --primary-pink: #ffb5c2;
+            --soft-cream: #fff9f5;
+            --container-bg: #ffffff;
+            --accent-pink: #ff8fab;
+            --hover-pink: #fb6f92;
+            --text-color: #5c4d54;
+            --border-color: #ffccd5;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-pink);
+            background-color: var(--soft-cream);
             color: var(--text-color);
             margin: 0;
             padding: 20px;
@@ -24,10 +26,11 @@
         .container {
             max-width: 700px;
             margin: 0 auto;
-            background: var(--white);
+            background: var(--container-bg);
             padding: 25px;
             border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(255, 179, 198, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 181, 194, 0.25);
+            border: 2px solid #ffe5ec;
         }
 
         /* ส่วนโปรไฟล์ร้าน */
@@ -49,18 +52,27 @@
 
         h1 {
             margin: 10px 0 5px;
-            color: #d87093;
+            color: #d85a7d;
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            font-size: 0.95rem;
+            color: #8c737d;
+            margin-bottom: 12px;
+            line-height: 1.6;
         }
 
         .rating-badge {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            color: #e65c85;
-            background: var(--accent-purple);
-            padding: 5px 15px;
+            color: #b54569;
+            background: #ffe5ec;
+            padding: 6px 16px;
             border-radius: 20px;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         /* ปุ่มเปิดระบบหลังบ้าน */
@@ -70,7 +82,7 @@
         }
 
         .admin-toggle button, button {
-            background-color: #ff8fab;
+            background-color: var(--accent-pink);
             color: white;
             border: none;
             padding: 8px 16px;
@@ -81,12 +93,12 @@
         }
 
         button:hover {
-            background-color: #fb6f92;
+            background-color: var(--hover-pink);
         }
 
         /* ส่วนหลังบ้าน (ซ่อนไว้ก่อน) */
         #admin-panel {
-            background: #fdf2f4;
+            background: #fff0f3;
             padding: 15px;
             border-radius: 12px;
             margin-bottom: 20px;
@@ -104,15 +116,17 @@
             margin-bottom: 5px;
             font-weight: bold;
             font-size: 0.9rem;
+            color: #735d67;
         }
 
         input[type="text"], select, textarea {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ffccd5;
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             box-sizing: border-box;
             font-family: inherit;
+            background-color: #fffcfd;
         }
 
         textarea {
@@ -122,8 +136,8 @@
 
         /* รายการรีวิว */
         .review-card {
-            background: #faf9fb;
-            border: 1px solid #eee;
+            background: #fff9fa;
+            border: 1px solid #ffd6e0;
             padding: 15px;
             border-radius: 12px;
             margin-bottom: 15px;
@@ -135,6 +149,7 @@
             border-radius: 8px;
             margin-top: 10px;
             display: block;
+            border: 1px solid #eee;
         }
 
         .delete-btn {
@@ -149,15 +164,6 @@
 
         .show-delete .delete-btn {
             display: inline-block;
-        }
-
-        .credit-link {
-            color: #d87093;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .credit-link:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -181,21 +187,24 @@
             <input type="text" id="admin-store-img" placeholder="วางลิงก์รูปภาพโปรไฟล์">
         </div>
         <button onclick="updateStoreInfo()">บันทึกข้อมูลร้าน</button>
-        <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">*โหมดแอดมินเปิดใช้งาน: สามารถกดปุ่ม "ลบ" ที่รีวิวเพื่อจัดการคอมเม้นต์ปลอมได้</p>
+        <p style="font-size: 0.8rem; color: #8c737d; margin-top: 5px;">*โหมดแอดมินเปิดใช้งาน: สามารถกดปุ่ม "ลบ" ที่รีวิวเพื่อจัดการคอมเม้นต์ปลอมได้</p>
     </div>
 
     <!-- โปรไฟล์ร้านค้าหลัก -->
     <div class="store-header">
         <img id="store-avatar" src="https://i.imgur.com/6VBx3io.png" alt="Store Logo" class="store-avatar">
-        <h1 id="store-title">Ginshopz Official</h1>
-        <p>แหล่งรวมเครดิตและความประทับใจจากลูกค้าตัวจริง ✨</p>
+        <h1 id="store-title">review for muay y shop</h1>
+        <div class="contact-info">
+            fb : s𑄝l݂mua݁yiꫀིྀა ィ<br>
+            id line : @352gmaft
+        </div>
         <div class="rating-badge">
             ⭐ <span id="avg-rating">0.0</span> / 5.0 (<span id="total-reviews">0</span> รีวิว)
         </div>
     </div>
 
     <!-- ฟอร์มส่งรีวิวจากลูกค้า -->
-    <div style="background: #fdf8fa; padding: 15px; border-radius: 12px; margin-bottom: 25px;">
+    <div style="background: #fff4f6; padding: 15px; border-radius: 12px; margin-bottom: 25px; border: 1px solid #ffccd5;">
         <h3>💬 ฝากเครดิต / เขียนรีวิว</h3>
         <form id="review-form" onsubmit="handleReviewSubmit(event)">
             <div class="form-group">
@@ -232,9 +241,9 @@
 </div>
 
 <script>
-    // ข้อมูลเริ่มต้น (เก็บไว้ในหน่วยความจำชั่วคราว)
+    // ข้อมูลเริ่มต้น
     let storeData = {
-        name: "Ginshopz Official",
+        name: "review for muay y shop",
         image: "https://i.imgur.com/6VBx3io.png"
     };
 
@@ -249,7 +258,7 @@
 
     let isAdminLoggedIn = false;
 
-    // ฟังก์ชันเปิด/ปิดหลังบ้าน (ใส่รหัสผ่านง่ายๆ เช่น 1234)
+    // ฟังก์ชันเปิด/ปิดหลังบ้าน (รหัสผ่าน 1234)
     function toggleAdmin() {
         if (!isAdminLoggedIn) {
             let pass = prompt("กรุณากรอกรหัสผ่านแอดมิน (ตั้งค่าไว้: 1234):");
@@ -326,7 +335,7 @@
         listContainer.innerHTML = "";
 
         if (reviews.length === 0) {
-            listContainer.innerHTML = "<p style='text-align: center; color: #888;'>ยังไม่มีรีวิวในขณะนี้ เป็นคนแรกที่รีวิวเลย!</p>";
+            listContainer.innerHTML = "<p style='text-align: center; color: #8c737d;'>ยังไม่มีรีวิวในขณะนี้ เป็นคนแรกที่รีวิวเลย!</p>";
             document.getElementById('avg-rating').innerText = "0.0";
             document.getElementById('total-reviews').innerText = "0";
             return;
