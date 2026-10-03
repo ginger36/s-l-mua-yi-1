@@ -461,9 +461,6 @@
                 if (result && result.record) {
                     if (result.record.storeData) storeData = result.record.storeData;
                     if (result.record.reviewsData) reviewsData = result.record.reviewsData;
-                } else {
-                    // ถ้ายังไม่มีข้อมูลบนคลาวด์ ให้บันทึกค่าเริ่มต้นชุดนี้ขึ้นไปทันที
-                    await saveToCloud();
                 }
             } catch (error) {
                 console.log("Using default data due to network error.");
@@ -473,17 +470,21 @@
 
         async function saveToCloud() {
             try {
-                await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+                const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-Master-Key': API_KEY
+                        'X-Master-Key': API_KEY,
+                        'X-Bin-Versioning': 'false'
                     },
                     body: JSON.stringify({
                         storeData: storeData,
                         reviewsData: reviewsData
                     })
                 });
+                if (!response.ok) {
+                    console.error("Failed to save to cloud, status:", response.status);
+                }
             } catch (error) {
                 console.error("Error saving to cloud:", error);
             }
