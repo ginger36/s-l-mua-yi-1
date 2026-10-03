@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -42,6 +42,7 @@
             background-size: 28px 28px;
             overflow-x: hidden;
         }
+        /* เอฟเฟกต์ลอยเฉพาะหน้าแรก (Splash Screen) */
         .floating-container {
             position: fixed;
             top: 0;
@@ -49,7 +50,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 0;
+            z-index: 55;
             overflow: hidden;
         }
         .svg-float {
@@ -60,8 +61,8 @@
         }
         @keyframes float-around {
             0% { transform: translateY(110vh) rotate(0deg) scale(0.7); opacity: 0; }
-            20% { opacity: 0.8; }
-            80% { opacity: 0.8; }
+            20% { opacity: 0.85; }
+            80% { opacity: 0.85; }
             100% { transform: translateY(-10vh) rotate(360deg) scale(1.3); opacity: 0; }
         }
         #splash-screen {
@@ -185,11 +186,11 @@
     </style>
 </head>
 <body class="font-sans antialiased min-h-screen relative text-pink-deep">
-    <!-- Floating Background Elements (อิโมจิ ⭐️, 🤍, 🩷 ลอยวิบวับ) -->
-    <div id="floating-emojis" class="floating-container"></div>
-
-    <!-- ==================== SPLASH SCREEN ==================== -->
+    <!-- ==================== SPLASH SCREEN (หน้าแรกมีอิโมจิ ⭐️, 🤍, 🩷 ลอยวิบวับ) ==================== -->
     <div id="splash-screen" class="fixed inset-0 flex flex-col items-center justify-center">
+        <!-- อิโมจิพื้นหลังเฉพาะหน้าแรก -->
+        <div id="floating-emojis" class="floating-container"></div>
+
         <div class="cloud cloud-1"></div>
         <div class="cloud cloud-2"></div>
         <div class="cloud cloud-3"></div>
@@ -218,7 +219,7 @@
         </div>
     </div>
 
-    <!-- ==================== MAIN CONTENT ==================== -->
+    <!-- ==================== MAIN CONTENT (หน้าถัดไป ไม่มีอิโมจิลอยแล้ว) ==================== -->
     <div id="main-content" class="py-10 px-4 w-full flex justify-center">
         <div class="w-full max-w-3xl bg-ticket-bg rounded-3xl shadow-2xl overflow-hidden relative border-2 border-pink-main">
            
@@ -354,7 +355,7 @@
 
                         <!-- ตั้งค่าข้อมูลร้านค้า ช่องทางติดต่อ และเปลี่ยนรหัสผ่าน -->
                         <div class="bg-white p-4 rounded-xl border border-pink-200 space-y-3">
-                            <h6 class="font-bold text-pink-deep text-xs">✏️️ ตั้งค่าข้อมูลร้านค้า & เปลี่ยนรหัสผ่าน</h6>
+                            <h6 class="font-bold text-pink-deep text-xs">✏ ตั้งค่าข้อมูลร้านค้า & เปลี่ยนรหัสผ่าน</h6>
                             <div>
                                 <label class="block text-[11px] font-bold text-pink-deep mb-1">เปลี่ยนชื่อร้าน:</label>
                                 <input type="text" id="input-store-name" value="Review For Muay Y Shop" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
@@ -425,7 +426,7 @@
     </div>
 
     <script>
-        // โหลดข้อมูลเริ่มต้นจาก LocalStorage (ถ้ามี) หรือใช้ค่าเริ่มต้น
+        // โหลดข้อมูลเริ่มต้นจาก LocalStorage หรือค่าเริ่มต้น
         let storeData = JSON.parse(localStorage.getItem('muay_shop_settings')) || {
             title: "Review For Muay Y Shop",
             logo: "",
@@ -453,16 +454,16 @@
 
         let showAllReviews = false;
 
-        // สร้างเอฟเฟกต์ฉากหลัง (ดาว ⭐️, หัวใจขาว 🤍, หัวใจชมพู 🩷 ลอยวิบวับ)
+        // สร้างเอฟเฟกต์ฉากหลังเฉพาะหน้าแรก (อีโมจิ ⭐️, 🤍, 🩷 และ ✨)
         function createFloatingSVGs() {
             const container = document.getElementById('floating-emojis');
             const items = ['⭐️', '🤍', '🩷', '✨', '💖'];
-            for (let i = 0; i < 25; i++) {
+            for (let i = 0; i < 28; i++) {
                 const span = document.createElement('span');
                 span.className = 'svg-float';
                 span.innerText = items[Math.floor(Math.random() * items.length)];
                 span.style.left = Math.random() * 100 + 'vw';
-                span.style.animationDuration = (Math.random() * 10 + 8) + 's';
+                span.style.animationDuration = (Math.random() * 9 + 7) + 's';
                 span.style.animationDelay = '-' + (Math.random() * 20) + 's';
                 span.style.fontSize = (Math.random() * 16 + 14) + 'px';
                 container.appendChild(span);
@@ -512,7 +513,7 @@
             }, 800);
         }
 
-        // แปลงไฟล์รูปภาพเป็น Base64 เพื่อเก็บบันทึกลงในเครื่องตลอดไป
+        // แปลงไฟล์รูปภาพเป็น Base64 เพื่อเก็บบันทึกถาวรในเครื่อง
         function convertFileToBase64(fileInput, callback) {
             const file = fileInput.files[0];
             if (!file) {
@@ -533,7 +534,6 @@
 
             document.getElementById('total-comments-count').innerText = `จำนวนรีวิวทั้งหมด: ${reviewsData.length} คน`;
 
-            // คำนวณคะแนนเฉลี่ย
             if (reviewsData.length > 0) {
                 let totalStars = reviewsData.reduce((sum, item) => sum + item.stars, 0);
                 let avg = (totalStars / reviewsData.length).toFixed(1);
@@ -648,7 +648,7 @@
                     img: base64Img
                 };
 
-                reviewsData.unshift(newRev); // เพิ่มไว้บนสุด
+                reviewsData.unshift(newRev);
                 localStorage.setItem('muay_shop_reviews', JSON.stringify(reviewsData));
 
                 document.getElementById('visitor-name').value = '';
