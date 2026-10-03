@@ -24,12 +24,13 @@
                         mono: ['Space Mono', 'monospace'],
                     },
                     colors: {
-                        'pink-main': '#F6CBDS', 
-                        'pink-soft': '#fef5f7', 
-                        'pink-deep': '#c26d87', 
-                        'cream-main': '#F8F4E1', 
-                        'cream-soft': '#fcfbfa', 
-                        'cream-deep': '#b59d53', 
+                        'pink-main': '#f472b6', 
+                        'pink-soft': '#fef2f8', 
+                        'pink-deep': '#db2777', 
+                        'pink-light': '#fbcfe8',
+                        'cream-main': '#fef3c7', 
+                        'cream-soft': '#fffbeb', 
+                        'cream-deep': '#d97706', 
                         'ticket-bg': '#ffffff',
                     }
                 }
@@ -38,8 +39,8 @@
     </script>
     <style>
         body {
-            background-color: #F8F4E1;
-            background-image: radial-gradient(#F6CBDS 1.5px, transparent 1.5px);
+            background-color: #fdf2f8;
+            background-image: radial-gradient(#f472b6 1.5px, transparent 1.5px);
             background-size: 24px 24px;
             overflow-x: hidden;
         }
@@ -62,7 +63,7 @@
         .svg-float svg {
             width: 100%;
             height: 100%;
-            filter: drop-shadow(0px 2px 4px rgba(246, 203, 221, 0.5));
+            filter: drop-shadow(0px 2px 4px rgba(244, 114, 182, 0.4));
         }
         @keyframes float-around {
             0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
@@ -71,7 +72,7 @@
             100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
         }
         #splash-screen {
-            background: linear-gradient(180deg, #F8F4E1 0%, #F6CBDS 100%);
+            background: linear-gradient(180deg, #fdf2f8 0%, #f472b6 100%);
             transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
             z-index: 60;
         }
@@ -100,9 +101,9 @@
             animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
         }
         @keyframes pulse-ring {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(246, 203, 221, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(246, 203, 221, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(246, 203, 221, 0); }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(244, 114, 182, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 114, 182, 0); }
         }
         #main-content {
             display: none;
@@ -117,8 +118,8 @@
             transform: translateY(-50%);
             width: 30px;
             height: 30px;
-            background-color: #F8F4E1;
-            background-image: radial-gradient(#F6CBDS 1.5px, transparent 1.5px);
+            background-color: #fdf2f8;
+            background-image: radial-gradient(#f472b6 1.5px, transparent 1.5px);
             background-size: 24px 24px;
             border-radius: 50%;
             z-index: 10;
@@ -126,7 +127,7 @@
         .ticket-cutout-left { left: -15px; }
         .ticket-cutout-right { right: -15px; }
         .dashed-divider {
-            border-top: 3px dashed #F6CBDS;
+            border-top: 3px dashed #f472b6;
             position: relative;
         }
         .stamp {
@@ -143,8 +144,8 @@
             pointer-events: none;
         }
         .stamp-p1 {
-            border: 4px solid #F6CBDS;
-            color: #F6CBDS;
+            border: 4px solid #f472b6;
+            color: #f472b6;
             width: 100px;
             height: 100px;
             transform: rotate(-15deg);
@@ -160,14 +161,14 @@
             width: 100%;
             background: repeating-linear-gradient(
                 90deg,
-                #F6CBDS, #F6CBDS 2px, transparent 2px, transparent 5px,
-                #F8F4E1 5px, #F8F4E1 8px, transparent 8px, transparent 11px,
-                #c26d87 11px, #c26d87 13px, transparent 13px, transparent 16px
+                #f472b6, #f472b6 2px, transparent 2px, transparent 5px,
+                #fbcfe8 5px, #fbcfe8 8px, transparent 8px, transparent 11px,
+                #db2777 11px, #db2777 13px, transparent 13px, transparent 16px
             );
         }
         .data-label {
             font-size: 0.7rem;
-            color: #c26d87;
+            color: #db2777;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 1px;
@@ -175,12 +176,12 @@
         .data-value {
             font-family: 'Space Mono', monospace;
             font-size: 1.1rem;
-            color: #c26d87;
+            color: #db2777;
             font-weight: 700;
         }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #F8F4E1; }
-        ::-webkit-scrollbar-thumb { background: #F6CBDS; border-radius: 4px; }
+        ::-webkit-scrollbar-track { background: #fdf2f8; }
+        ::-webkit-scrollbar-thumb { background: #f472b6; border-radius: 4px; }
     </style>
 </head>
 <body class="font-sans antialiased min-h-screen relative text-pink-deep">
@@ -192,7 +193,7 @@
         <div class="cloud cloud-1"></div>
         <div class="cloud cloud-2"></div>
         <div class="relative z-10 flex flex-col items-center px-4">
-            <div class="w-32 h-32 bg-white rounded-3xl shadow-xl flex items-center justify-center mb-6 border-4 border-[#F8F4E1] overflow-hidden">
+            <div class="w-32 h-32 bg-white rounded-3xl shadow-xl flex items-center justify-center mb-6 border-4 border-pink-light overflow-hidden">
                 <img id="splash-logo-img" src="logo1.png" alt="Shop Logo" class="w-full h-full object-cover hover:scale-110 transition duration-500">
             </div>
            
@@ -200,14 +201,14 @@
             <p class="text-pink-deep text-xs md:text-sm tracking-wider font-medium mb-1 drop-shadow-sm text-center">fb : s𑄝l݂mua݁yiꫀིྀა ィ</p>
             <p class="text-pink-deep text-xs md:text-sm tracking-wider font-medium mb-4 drop-shadow-sm text-center">id line : @352gmaft</p>
            
-            <div class="flex text-amber-500 space-x-1 mb-8 text-xl drop-shadow-sm">
+            <div class="flex text-amber-400 space-x-1 mb-8 text-xl drop-shadow-sm">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
             </div>
-            <button onclick="enterShop()" class="pulse-btn w-20 h-20 bg-white/70 backdrop-blur-md border border-white rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition shadow-lg group">
+            <button onclick="enterShop()" class="pulse-btn w-20 h-20 bg-white/80 backdrop-blur-md border border-white rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition shadow-lg group">
                 <i class="fa-solid fa-play text-pink-deep text-3xl ml-2 group-hover:scale-110 transition duration-300"></i>
             </button>
             <p class="text-pink-deep mt-6 text-sm drop-shadow-sm font-medium">กดปุ่มเพื่อเข้าชมรีวิวร้านหมวยยี่</p>
@@ -216,24 +217,24 @@
 
     <!-- ==================== MAIN CONTENT ==================== -->
     <div id="main-content" class="py-10 px-4 w-full flex justify-center">
-        <div class="w-full max-w-3xl bg-ticket-bg rounded-3xl shadow-2xl overflow-hidden relative border-2 border-[#F6CBDS]">
+        <div class="w-full max-w-3xl bg-ticket-bg rounded-3xl shadow-2xl overflow-hidden relative border-2 border-pink-main">
            
             <!-- HEADER -->
-            <div class="bg-[#F6CBDS] p-6 flex flex-col sm:flex-row items-center justify-between text-pink-deep relative gap-4 overflow-hidden">
+            <div class="bg-pink-main p-6 flex flex-col sm:flex-row items-center justify-between text-white relative gap-4 overflow-hidden">
                 <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(white 2px, transparent 2px); background-size: 15px 15px;"></div>
                
                 <div class="flex items-center gap-4 relative z-10 text-center sm:text-left">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm overflow-hidden border-2 border-[#F8F4E1] flex-shrink-0 mx-auto">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm overflow-hidden border-2 border-pink-light flex-shrink-0 mx-auto">
                         <img id="header-logo-img" src="logo1.png" alt="Shop Logo" class="w-full h-full object-cover">
                     </div>
                     <div>
                         <h2 id="store-title-display" class="text-xl md:text-2xl font-bold tracking-wider drop-shadow-sm uppercase">Review For Muay Y Shop</h2>
-                        <p class="text-xs font-medium opacity-90">fb : s𑄝l݂mua݁yiꫀིྀა ィ</p>
-                        <p class="text-xs font-medium opacity-90">id line : @352gmaft</p>
+                        <p class="text-xs font-medium opacity-95">fb : s𑄝l݂mua݁yiꫀིྀა ィ</p>
+                        <p class="text-xs font-medium opacity-95">id line : @352gmaft</p>
                     </div>
                 </div>
                 <div class="text-center sm:text-right relative z-10">
-                    <span class="px-3 py-1 bg-white/40 rounded-full text-xs font-bold tracking-widest uppercase border border-white/60">Verified Store</span>
+                    <span class="px-3 py-1 bg-white/30 rounded-full text-xs font-bold tracking-widest uppercase border border-white/50">Verified Store</span>
                 </div>
             </div>
 
@@ -241,24 +242,24 @@
             <div class="p-8 relative bg-white">
                 <div class="stamp stamp-p1 top-4 right-10"></div>
                 <div class="text-center mb-6 relative z-10">
-                    <p class="text-pink-deep mb-2 font-medium"><i class="fa-solid fa-heart text-amber-500"></i> ยินดีต้อนรับเข้าสู่พื้นที่รีวิวและเครดิตร้านหมวยยี่ค่ะ <i class="fa-solid fa-heart text-amber-500"></i></p>
+                    <p class="text-pink-deep mb-2 font-medium"><i class="fa-solid fa-heart text-pink-main"></i> ยินดีต้อนรับเข้าสู่พื้นที่รีวิวและเครดิตร้านหมวยยี่ค่ะ <i class="fa-solid fa-heart text-pink-main"></i></p>
                     <h3 class="text-2xl md:text-3xl font-bold text-pink-deep mb-2">Review For Muay Y Shop</h3>
-                    <p class="text-pink-deep opacity-80 text-sm font-medium">ศูนย์รวมรีวิวความประทับใจจากลูกค้าตัวจริง มั่นใจ ปลอดภัย ได้รับของชัวร์!</p>
+                    <p class="text-pink-deep opacity-80 text-sm font-medium">ศูนย์รวมรีวิวความประทับใจและหลักฐานการซื้อขายจากลูกค้าจริง ปลอดภัย ได้รับของชัวร์!</p>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                     <div><p class="data-label">From</p><p class="data-value">TRUST</p></div>
                     <div><p class="data-label">To</p><p class="data-value">MUAY Y</p></div>
-                    <div><p class="data-label">Gate</p><p class="data-value text-amber-600">CREDIT</p></div>
+                    <div><p class="data-label">Gate</p><p class="data-value text-pink-main">CREDIT</p></div>
                     <div><p class="data-label">Status</p><p class="data-value text-pink-deep">VERIFIED</p></div>
                 </div>
 
                 <!-- Average Rating Card -->
-                <div class="bg-[#F8F4E1] p-5 rounded-2xl border-2 border-[#F6CBDS] shadow-sm relative z-10 text-center">
-                    <h4 class="font-bold text-pink-deep mb-2"><i class="fa-solid fa-star text-amber-500 mr-2"></i> คะแนนความพึงพอใจเฉลี่ย</h4>
+                <div class="bg-pink-soft p-5 rounded-2xl border-2 border-pink-main shadow-sm relative z-10 text-center">
+                    <h4 class="font-bold text-pink-deep mb-2"><i class="fa-solid fa-star text-amber-400 mr-2"></i> คะแนนความพึงพอใจเฉลี่ย</h4>
                     <div class="flex justify-center items-center gap-2 mb-1">
                         <span id="average-rating" class="text-4xl font-mono font-bold text-pink-deep">5.0</span>
-                        <div class="text-amber-500 text-xl">
+                        <div class="text-amber-400 text-xl">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -278,21 +279,21 @@
             <!-- SECTION 2: Customer Add Review & Reviews List -->
             <div class="p-8 relative bg-white">
                 <div class="flex justify-between items-center mb-6 relative z-10">
-                    <h4 class="font-bold text-pink-deep text-lg"><i class="fa-solid fa-comments mr-2 text-pink-main"></i> รายการรีวิวและเครดิตจากลูกค้า</h4>
-                    <button onclick="requestAdminAccess()" class="px-3 py-1.5 bg-[#fef5f7] text-pink-deep border border-[#F6CBDS] rounded-xl text-xs font-bold hover:bg-[#F6CBDS] transition shadow-sm">
+                    <h4 class="font-bold text-pink-deep text-lg"><i class="fa-solid fa-comments mr-2 text-pink-main"></i> รายการรีวิวและหลักฐานการซื้อขาย</h4>
+                    <button onclick="requestAdminAccess()" class="px-3 py-1.5 bg-pink-soft text-pink-deep border border-pink-main rounded-xl text-xs font-bold hover:bg-pink-main hover:text-white transition shadow-sm">
                         <i class="fa-solid fa-lock mr-1"></i> ระบบหลังบ้าน
                     </button>
                 </div>
 
-                <!-- 🌟 ฟอร์มให้ลูกค้ามาคอมเมนต์และกดดาวได้ทันที -->
-                <div class="bg-[#fef5f7] p-5 rounded-2xl border-2 border-[#F6CBDS] mb-8 relative z-10 shadow-sm">
-                    <h5 class="font-bold text-pink-deep text-sm mb-3"><i class="fa-solid fa-pen-nib mr-2 text-pink-deep"></i> เขียนรีวิว / ฝากคอมเมนต์ของคุณที่นี่</h5>
+                <!-- 🌟 ฟอร์มให้ลูกค้ามาคอมเมนต์ + แนบรูปซื้อขายได้ทันที -->
+                <div class="bg-pink-soft p-5 rounded-2xl border-2 border-pink-main mb-8 relative z-10 shadow-sm">
+                    <h5 class="font-bold text-pink-deep text-sm mb-3"><i class="fa-solid fa-camera-retro mr-2 text-pink-deep"></i> เขียนรีวิว / แนบรูปหลักฐานการซื้อขายของคุณ</h5>
                     <div class="space-y-3">
-                        <input type="text" id="visitor-name" placeholder="ชื่อของคุณ (เช่น คุณฟ้าใส)" class="w-full px-3 py-2 bg-white border border-[#F6CBDS] rounded-xl text-xs text-pink-deep focus:outline-none focus:ring-2 focus:ring-[#F6CBDS]">
+                        <input type="text" id="visitor-name" placeholder="ชื่อของคุณ (เช่น คุณฟ้าใส)" class="w-full px-3 py-2 bg-white border border-pink-light rounded-xl text-xs text-pink-deep focus:outline-none focus:ring-2 focus:ring-pink-main">
                         
                         <div class="flex items-center gap-2">
                             <label class="text-xs font-bold text-pink-deep">ให้คะแนน:</label>
-                            <select id="visitor-stars" class="px-3 py-1.5 bg-white border border-[#F6CBDS] rounded-xl text-xs text-pink-deep focus:outline-none">
+                            <select id="visitor-stars" class="px-3 py-1.5 bg-white border border-pink-light rounded-xl text-xs text-pink-deep focus:outline-none">
                                 <option value="5">⭐⭐⭐⭐⭐ (5 ดาว - ดีมาก)</option>
                                 <option value="4">⭐⭐⭐⭐ (4 ดาว - ดี)</option>
                                 <option value="3">⭐⭐⭐ (3 ดาว - ปานกลาง)</option>
@@ -301,62 +302,89 @@
                             </select>
                         </div>
 
-                        <textarea id="visitor-comment" placeholder="พิมพ์ข้อความรีวิวหรือความประทับใจที่นี่..." rows="3" class="w-full px-3 py-2 bg-white border border-[#F6CBDS] rounded-xl text-xs text-pink-deep focus:outline-none focus:ring-2 focus:ring-[#F6CBDS]"></textarea>
+                        <textarea id="visitor-comment" placeholder="พิมพ์ข้อความรีวิวหรือความประทับใจ..." rows="2" class="w-full px-3 py-2 bg-white border border-pink-light rounded-xl text-xs text-pink-deep focus:outline-none focus:ring-2 focus:ring-pink-main"></textarea>
                         
-                        <button onclick="submitVisitorReview()" class="w-full py-2 bg-[#F6CBDS] text-pink-deep font-bold rounded-xl text-xs hover:bg-[#c26d87] hover:text-white transition shadow-sm">
-                            <i class="fa-solid fa-paper-plane mr-1"></i> ส่งรีวิวของคุณ
+                        <input type="text" id="visitor-img-url" placeholder="วางลิงก์รูปภาพการซื้อขาย/สลิป (ถ้ามี เช่น https://...)" class="w-full px-3 py-2 bg-white border border-pink-light rounded-xl text-xs text-pink-deep focus:outline-none focus:ring-2 focus:ring-pink-main">
+
+                        <button onclick="submitVisitorReview()" class="w-full py-2 bg-pink-main text-white font-bold rounded-xl text-xs hover:bg-pink-deep transition shadow-sm">
+                            <i class="fa-solid fa-paper-plane mr-1"></i> ส่งรีวิวและรูปภาพ
                         </button>
                     </div>
                 </div>
 
                 <!-- ส่วนระบบหลังบ้าน (Admin Control Panel - ซ่อนไว้) -->
-                <div id="admin-panel" class="hidden bg-[#F8F4E1] p-5 rounded-2xl border-2 border-amber-300 mb-6 relative z-10 shadow-inner">
-                    <div class="flex justify-between items-center mb-4 border-b border-amber-200 pb-2">
-                        <h5 class="font-bold text-pink-deep text-sm"><i class="fa-solid fa-gear mr-2 text-amber-600"></i> จัดการร้านค้า (Admin Mode Active)</h5>
+                <div id="admin-panel" class="hidden bg-pink-soft p-5 rounded-2xl border-2 border-pink-deep mb-6 relative z-10 shadow-inner">
+                    <div class="flex justify-between items-center mb-4 border-b border-pink-200 pb-2">
+                        <h5 class="font-bold text-pink-deep text-sm"><i class="fa-solid fa-gear mr-2 text-pink-deep"></i> จัดการร้านค้า (Admin Mode Active)</h5>
                         <button onclick="closeAdminPanel()" class="text-xs text-red-500 font-bold hover:underline">ปิดระบบหลังบ้าน</button>
                     </div>
 
                     <div class="space-y-4 text-sm">
-                        <!-- แก้ไขชื่อร้านและรูปโปรไฟล์ -->
-                        <div class="bg-white p-4 rounded-xl border border-amber-200 space-y-3">
-                            <h6 class="font-bold text-pink-deep text-xs">✏️ ตั้งค่าข้อมูลร้านค้า</h6>
+                        <!-- เพิ่มรีวิวพร้อมรูปซื้อขายจากแอดมิน -->
+                        <div class="bg-white p-4 rounded-xl border border-pink-200">
+                            <h6 class="font-bold text-pink-deep text-xs mb-2">➕ เพิ่มรีวิว / เครดิต / รูปซื้อขายใหม่</h6>
+                            <div class="grid gap-2">
+                                <input type="text" id="new-reviewer-name" placeholder="ชื่อลูกค้า (เช่น คุณแอม)" class="px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
+                                <select id="new-review-stars" class="px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
+                                    <option value="5">⭐⭐⭐⭐⭐ (5 ดาว)</option>
+                                    <option value="4">⭐⭐⭐⭐ (4 ดาว)</option>
+                                    <option value="3">⭐⭐⭐ (3 ดาว)</option>
+                                    <option value="2">⭐⭐ (2 ดาว)</option>
+                                    <option value="1">⭐ (1 ดาว)</option>
+                                </select>
+                                <textarea id="new-review-text" placeholder="ข้อความรีวิว..." class="px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none" rows="2"></textarea>
+                                <input type="text" id="new-review-img" placeholder="ลิงก์รูปภาพหลักฐานการซื้อขาย" class="px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
+                                <button onclick="addNewReview()" class="px-4 py-1.5 bg-pink-main text-white text-xs font-bold rounded-xl hover:bg-pink-deep transition shadow-sm">เพิ่มรีวิวลงระบบ</button>
+                            </div>
+                        </div>
+
+                        <!-- ตั้งค่าข้อมูลร้านค้า ช่องทางติดต่อ และเปลี่ยนรหัสผ่าน -->
+                        <div class="bg-white p-4 rounded-xl border border-pink-200 space-y-3">
+                            <h6 class="font-bold text-pink-deep text-xs">✏️ ตั้งค่าข้อมูลร้านค้า & เปลี่ยนรหัสผ่าน</h6>
                             <div>
                                 <label class="block text-[11px] font-bold text-pink-deep mb-1">เปลี่ยนชื่อร้าน:</label>
-                                <input type="text" id="input-store-name" value="Review For Muay Y Shop" class="w-full px-3 py-1.5 bg-[#fef5f7] border border-[#F6CBDS] rounded-xl text-xs text-pink-deep focus:outline-none">
+                                <input type="text" id="input-store-name" value="Review For Muay Y Shop" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
                             </div>
                             <div>
                                 <label class="block text-[11px] font-bold text-pink-deep mb-1">เปลี่ยนรูปโปรร้าน (วาง URL รูปภาพ):</label>
-                                <input type="text" id="new-logo-url" placeholder="เช่น logo1.png หรือลิงก์รูปภาพ" class="w-full px-3 py-1.5 bg-[#fef5f7] border border-[#F6CBDS] rounded-xl text-xs text-pink-deep focus:outline-none">
+                                <input type="text" id="new-logo-url" placeholder="เช่น logo1.png" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
                             </div>
                             <div>
-                                <label class="block text-[11px] font-bold text-pink-deep mb-1">แก้ไขช่องทางการติดต่อ:</label>
-                                <input type="text" id="input-fb" value="s𑄝l݂mua݁yiꫀིྀა ィ" placeholder="Facebook" class="w-full px-3 py-1.5 bg-[#fef5f7] border border-[#F6CBDS] rounded-xl text-xs text-pink-deep mb-1 focus:outline-none">
-                                <input type="text" id="input-line" value="@352gmaft" placeholder="Line ID" class="w-full px-3 py-1.5 bg-[#fef5f7] border border-[#F6CBDS] rounded-xl text-xs text-pink-deep focus:outline-none">
+                                <label class="block text-[11px] font-bold text-pink-deep mb-1">แก้ไขช่องทางการติดต่อ & ใส่ลิงก์กดเข้าสู่ระบบ:</label>
+                                <input type="text" id="input-fb" value="s𑄝l݂mua݁yiꫀིྀა ィ" placeholder="ชื่อ Facebook" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep mb-1 focus:outline-none">
+                                <input type="text" id="input-fb-link" placeholder="ลิงก์ Facebook (เช่น https://facebook.com/...)" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep mb-2 focus:outline-none">
+                                
+                                <input type="text" id="input-line" value="@352gmaft" placeholder="Line ID" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep mb-1 focus:outline-none">
+                                <input type="text" id="input-line-link" placeholder="ลิงก์ Line (เช่น https://line.me/ti/p/...)" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
                             </div>
-                            <button onclick="updateStoreSettings()" class="w-full py-1.5 bg-amber-500 text-white text-xs font-bold rounded-xl hover:bg-amber-600 transition shadow-sm">บันทึกการตั้งค่าร้าน</button>
+                            <div>
+                                <label class="block text-[11px] font-bold text-pink-deep mb-1">🔑 เปลี่ยนรหัสผ่านระบบหลังบ้านใหม่:</label>
+                                <input type="password" id="input-new-password" placeholder="กรอกรหัสผ่านใหม่ที่ต้องการที่นี่" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
+                            </div>
+                            <button onclick="updateStoreSettings()" class="w-full py-1.5 bg-pink-deep text-white text-xs font-bold rounded-xl hover:bg-pink-700 transition shadow-sm">บันทึกการตั้งค่าทั้งหมด</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- รายการรีวิว (สามารถกดลบได้เมื่อเข้าโหมดแอดมิน) -->
+                <!-- รายการรีวิว -->
                 <div id="reviews-container" class="space-y-4 relative z-10">
-                    <div class="review-item bg-[#fef5f7] p-4 rounded-2xl border-2 border-[#F6CBDS] flex justify-between items-start gap-4 shadow-sm">
-                        <div>
+                    <div class="review-item bg-pink-soft p-4 rounded-2xl border-2 border-pink-main flex justify-between items-start gap-4 shadow-sm">
+                        <div class="w-full">
                             <div class="flex items-center gap-2 mb-1">
                                 <span class="font-bold text-sm text-pink-deep">คุณแอม (ลูกค้าประจำ)</span>
-                                <span class="text-xs text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                                <span class="text-xs text-amber-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
                             </div>
-                            <p class="text-xs text-pink-deep opacity-90">"บริการดีมากค่ะ ส่งไวทันใจ แม่ค้าน่ารักคุยง่ายมาก ได้รับสินค้าชัวร์แน่นอน 100% คร่าา"</p>
+                            <p class="text-xs text-pink-deep opacity-90 mb-2">"บริการดีมากค่ะ ส่งไวทันใจ แม่ค้าน่ารักคุยง่ายมาก ได้รับสินค้าชัวร์แน่นอน 100% คร่าา"</p>
                         </div>
                         <button onclick="deleteReview(this)" class="admin-delete-btn hidden px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs font-bold hover:bg-red-200 transition flex-shrink-0">ลบ</button>
                     </div>
-                    <div class="review-item bg-[#F8F4E1] p-4 rounded-2xl border-2 border-amber-200 flex justify-between items-start gap-4 shadow-sm">
-                        <div>
+                    <div class="review-item bg-pink-soft p-4 rounded-2xl border-2 border-pink-main flex justify-between items-start gap-4 shadow-sm">
+                        <div class="w-full">
                             <div class="flex items-center gap-2 mb-1">
                                 <span class="font-bold text-sm text-pink-deep">คุณมายด์</span>
-                                <span class="text-xs text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                                <span class="text-xs text-amber-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
                             </div>
-                            <p class="text-xs text-pink-deep opacity-90">"ประทับใจมากค่ะ ร้านนี้เครดิตแน่นจริง อุดหนุนรอบสองแล้วไม่เคยผิดหวังเลย"</p>
+                            <p class="text-xs text-pink-deep opacity-90 mb-2">"ประทับใจมากค่ะ ร้านนี้เครดิตแน่นจริง อุดหนุนรอบสองแล้วไม่เคยผิดหวังเลย"</p>
                         </div>
                         <button onclick="deleteReview(this)" class="admin-delete-btn hidden px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs font-bold hover:bg-red-200 transition flex-shrink-0">ลบ</button>
                     </div>
@@ -373,28 +401,31 @@
                 <h4 class="font-bold text-pink-deep mb-4 text-center"><i class="fa-solid fa-address-card mr-2 text-pink-main"></i> ช่องทางการติดต่อ</h4>
                 <div class="max-w-md mx-auto space-y-3">
                     <!-- LINE -->
-                    <div class="flex items-center p-3 bg-[#fef5f7] text-pink-deep rounded-2xl border-2 border-[#F6CBDS] shadow-sm">
+                    <a id="link-line-channel" href="#" target="_blank" class="flex items-center p-3 bg-pink-soft text-pink-deep rounded-2xl border-2 border-pink-main shadow-sm hover:scale-[1.02] transition block">
                         <i class="fa-brands fa-line text-3xl mr-4 ml-2 text-pink-deep"></i>
-                        <div><p class="font-bold text-sm">LINE Official</p><p id="display-line" class="text-xs opacity-80">@352gmaft</p></div>
-                    </div>
+                        <div><p class="font-bold text-sm">LINE Official (กดเพื่อแชท)</p><p id="display-line" class="text-xs opacity-80">@352gmaft</p></div>
+                    </a>
                     <!-- Facebook -->
-                    <div class="flex items-center p-3 bg-[#F8F4E1] text-pink-deep rounded-2xl border-2 border-amber-200 shadow-sm">
-                        <i class="fa-brands fa-facebook text-3xl mr-4 ml-2 text-amber-600"></i>
-                        <div><p class="font-bold text-sm">Facebook Page</p><p id="display-fb" class="text-xs opacity-80">s𑄝l݂mua݁yiꫀིྀა ィ</p></div>
-                    </div>
+                    <a id="link-fb-channel" href="#" target="_blank" class="flex items-center p-3 bg-pink-soft text-pink-deep rounded-2xl border-2 border-pink-main shadow-sm hover:scale-[1.02] transition block">
+                        <i class="fa-brands fa-facebook text-3xl mr-4 ml-2 text-pink-main"></i>
+                        <div><p class="font-bold text-sm">Facebook Page (กดเพื่อเข้าชม)</p><p id="display-fb" class="text-xs opacity-80">s𑄝l݂mua݁yiꫀིྀა ィ</p></div>
+                    </a>
                 </div>
 
                 <div class="mt-10 text-center">
                     <p class="text-xs font-bold text-pink-deep uppercase tracking-widest mb-2">Ticket Confirmation</p>
                     <div class="barcode mb-3 mx-auto max-w-sm opacity-80 rounded-sm"></div>
-                    <p class="font-mono text-sm tracking-[0.3em] text-pink-deep">MUAY-<span class="text-amber-600">2026</span>-REVIEW-<span class="text-pink-deep">SHOP</span></p>
-                    <p class="text-pink-deep mt-6 text-sm font-bold tracking-wide"><i class="fa-solid fa-heart text-pink-deep mr-1"></i> ขอบคุณที่ไว้วางใจ Review For Muay Y Shop <i class="fa-solid fa-heart text-amber-500 ml-1"></i></p>
+                    <p class="font-mono text-sm tracking-[0.3em] text-pink-deep">MUAY-<span class="text-pink-main">2026</span>-REVIEW-<span class="text-pink-deep">SHOP</span></p>
+                    <p class="text-pink-deep mt-6 text-sm font-bold tracking-wide"><i class="fa-solid fa-heart text-pink-main mr-1"></i> ขอบคุณที่ไว้วางใจ Review For Muay Y Shop <i class="fa-solid fa-heart text-pink-main ml-1"></i></p>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        // เก็บรหัสผ่านหลังบ้าน (เริ่มต้น 1234 และเปลี่ยนได้ในระบบหลังบ้าน)
+        let adminPassword = '1234';
+
         // สร้างลูกเล่นลอยตัวพาสเทลฉากหลัง
         function createFloatingSVGs() {
             const container = document.getElementById('floating-emojis');
@@ -403,7 +434,7 @@
                 '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>',
                 '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8"/></svg>'
             ];
-            const pastelColors = ['#F6CBDS', '#F8F4E1', '#ffffff', '#e8b4c8', '#eddcb7'];
+            const pastelColors = ['#f472b6', '#fbcfe8', '#ffffff', '#db2777', '#fdf2f8'];
             for (let i = 0; i < 15; i++) {
                 const span = document.createElement('span');
                 span.className = 'svg-float';
@@ -432,16 +463,16 @@
             }, 800);
         }
 
-        // ระบบขอรหัสผ่านระบบหลังบ้าน (รหัสเริ่มต้น 1234)
+        // ระบบขอรหัสผ่านหลังบ้าน (ซ่อนรหัส ไม่บอกใน prompt หน้าเว็บ)
         function requestAdminAccess() {
-            const pwd = prompt('กรุณากรอกรหัสผ่านระบบหลังบ้าน (ค่าเริ่มต้น 1234):');
-            if (pwd === '1234') {
+            const pwd = prompt('กรุณากรอกรหัสผ่านระบบหลังบ้าน:');
+            if (pwd === adminPassword) {
                 const panel = document.getElementById('admin-panel');
                 panel.classList.remove('hidden');
                 
                 const deleteBtns = document.querySelectorAll('.admin-delete-btn');
                 deleteBtns.forEach(btn => btn.classList.remove('hidden'));
-                alert('เข้าสู่ระบบหลังบ้านสำเร็จ! ✨ ตอนนี้สามารถกดปุ่ม "ลบ" รีวิวที่ไม่ต้องการได้');
+                alert('เข้าสู่ระบบหลังบ้านสำเร็จ! ✨');
             } else if (pwd !== null) {
                 alert('รหัสผ่านไม่ถูกต้องค่ะ ❌');
             }
@@ -454,12 +485,15 @@
             deleteBtns.forEach(btn => btn.classList.add('hidden'));
         }
 
-        // อัปเดตร้านค้า (ชื่อ รูป และช่องทางติดต่อ)
+        // อัปเดตร้านค้า ช่องทางติดต่อ ลิงก์ และรหัสผ่านใหม่
         function updateStoreSettings() {
             const newName = document.getElementById('input-store-name').value.trim();
             const newLogo = document.getElementById('new-logo-url').value.trim();
             const newFb = document.getElementById('input-fb').value.trim();
+            const newFbLink = document.getElementById('input-fb-link').value.trim();
             const newLine = document.getElementById('input-line').value.trim();
+            const newLineLink = document.getElementById('input-line-link').value.trim();
+            const newPwd = document.getElementById('input-new-password').value.trim();
 
             if (newName) {
                 document.getElementById('store-title-display').innerText = newName;
@@ -471,17 +505,29 @@
             if (newFb) {
                 document.getElementById('display-fb').innerText = newFb;
             }
+            if (newFbLink) {
+                document.getElementById('link-fb-channel').href = newFbLink;
+            }
             if (newLine) {
                 document.getElementById('display-line').innerText = newLine;
+            }
+            if (newLineLink) {
+                document.getElementById('link-line-channel').href = newLineLink;
+            }
+            if (newPwd) {
+                adminPassword = newPwd;
+                document.getElementById('input-new-password').value = '';
+                alert('เปลี่ยนรหัสผ่านหลังบ้านใหม่เรียบร้อยแล้วค่ะ! 🔒');
             }
             alert('บันทึกการตั้งค่าร้านเรียบร้อยแล้วค่ะ! ✨');
         }
 
-        // ฟังก์ชันให้ลูกค้าทั่วไปส่งรีวิวเข้ามาได้ทันที
+        // ฟังก์ชันลูกค้าส่งรีวิว + แนบรูปซื้อขาย
         function submitVisitorReview() {
             const name = document.getElementById('visitor-name').value.trim();
             const stars = parseInt(document.getElementById('visitor-stars').value);
             const text = document.getElementById('visitor-comment').value.trim();
+            const imgUrl = document.getElementById('visitor-img-url').value.trim();
 
             if (!name || !text) {
                 alert('กรุณากรอกชื่อและข้อความรีวิวก่อนส่งด้วยนะคะ 😊');
@@ -493,21 +539,26 @@
                 starHtml += '<i class="fa-solid fa-star"></i>';
             }
 
+            let imgHtml = '';
+            if (imgUrl) {
+                imgHtml = `<div class="mt-2"><img src="${imgUrl}" alt="Proof" class="max-h-48 rounded-xl border border-pink-main object-cover"></div>`;
+            }
+
             const container = document.getElementById('reviews-container');
             const newDiv = document.createElement('div');
-            newDiv.className = 'review-item bg-[#fef5f7] p-4 rounded-2xl border-2 border-[#F6CBDS] flex justify-between items-start gap-4 shadow-sm';
+            newDiv.className = 'review-item bg-pink-soft p-4 rounded-2xl border-2 border-pink-main flex justify-between items-start gap-4 shadow-sm';
             
-            // ตรวจสอบว่าแอดมินเปิดใช้อยู่หรือไม่ ถ้าเปิดอยู่ ปุ่มลบจะแสดงด้วย
             const isAdminActive = !document.getElementById('admin-panel').classList.contains('hidden');
             const deleteBtnClass = isAdminActive ? 'admin-delete-btn' : 'admin-delete-btn hidden';
 
             newDiv.innerHTML = `
-                <div>
+                <div class="w-full">
                     <div class="flex items-center gap-2 mb-1">
                         <span class="font-bold text-sm text-pink-deep">${name}</span>
-                        <span class="text-xs text-amber-500">${starHtml}</span>
+                        <span class="text-xs text-amber-400">${starHtml}</span>
                     </div>
-                    <p class="text-xs text-pink-deep opacity-90">"${text}"</p>
+                    <p class="text-xs text-pink-deep opacity-90 mb-2">"${text}"</p>
+                    ${imgHtml}
                 </div>
                 <button onclick="deleteReview(this)" class="${deleteBtnClass} px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs font-bold hover:bg-red-200 transition flex-shrink-0">ลบ</button>
             `;
@@ -515,10 +566,55 @@
             container.prepend(newDiv);
             document.getElementById('visitor-name').value = '';
             document.getElementById('visitor-comment').value = '';
-            alert('ขอบคุณสำหรับรีวิวและความประทับใจค่ะ! 🎉 โพสต์ลงระบบเรียบร้อยแล้ว');
+            document.getElementById('visitor-img-url').value = '';
+            alert('ขอบคุณสำหรับรีวิวและหลักฐานการซื้อขายค่ะ! 🎉');
         }
 
-        // ลบรีวิว (สำหรับแอดมิน)
+        // แอดมินเพิ่มรีวิวใหม่ + รูป
+        function addNewReview() {
+            const name = document.getElementById('new-reviewer-name').value.trim();
+            const stars = parseInt(document.getElementById('new-review-stars').value);
+            const text = document.getElementById('new-review-text').value.trim();
+            const imgUrl = document.getElementById('new-review-img').value.trim();
+
+            if (!name || !text) {
+                alert('กรุณากรอกชื่อและข้อความรีวิวให้ครบถ้วนด้วยนะคะ');
+                return;
+            }
+
+            let starHtml = '';
+            for (let i = 0; i < stars; i++) {
+                starHtml += '<i class="fa-solid fa-star"></i>';
+            }
+
+            let imgHtml = '';
+            if (imgUrl) {
+                imgHtml = `<div class="mt-2"><img src="${imgUrl}" alt="Proof" class="max-h-48 rounded-xl border border-pink-main object-cover"></div>`;
+            }
+
+            const container = document.getElementById('reviews-container');
+            const newDiv = document.createElement('div');
+            newDiv.className = 'review-item bg-pink-soft p-4 rounded-2xl border-2 border-pink-main flex justify-between items-start gap-4 shadow-sm';
+            newDiv.innerHTML = `
+                <div class="w-full">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-bold text-sm text-pink-deep">${name}</span>
+                        <span class="text-xs text-amber-400">${starHtml}</span>
+                    </div>
+                    <p class="text-xs text-pink-deep opacity-90 mb-2">"${text}"</p>
+                    ${imgHtml}
+                </div>
+                <button onclick="deleteReview(this)" class="admin-delete-btn px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs font-bold hover:bg-red-200 transition flex-shrink-0">ลบ</button>
+            `;
+
+            container.prepend(newDiv);
+            document.getElementById('new-reviewer-name').value = '';
+            document.getElementById('new-review-text').value = '';
+            document.getElementById('new-review-img').value = '';
+            alert('เพิ่มรีวิวสำเร็จแล้วค่ะ! 🎉');
+        }
+
+        // ลบรีวิว
         function deleteReview(button) {
             if (confirm('ต้องการลบคอมเมนต์หรือรีวิวนี้ใช่ไหมคะ?')) {
                 const reviewItem = button.closest('.review-item');
