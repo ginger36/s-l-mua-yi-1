@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinkjulieland | Web Design & Full Service</title>
+    <title>Review For Muay Y Shop | Credit & Review</title>
    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,12 +24,12 @@
                         mono: ['Space Mono', 'monospace'],
                     },
                     colors: {
-                        'blue-main': '#86cbea', // สีฟ้าพาสเทลหลัก
-                        'blue-soft': '#eef7fc', // สีฟ้าอ่อนมาก (พื้นหลัง)
-                        'blue-deep': '#2755ab', // สีน้ำเงินเข้ม (ตัวหนังสือ/โบว์)
-                        'yellow-main': '#fcf096', // สีเหลืองพาสเทลหลัก
-                        'yellow-soft': '#fffce8', // สีเหลืองอ่อน
-                        'yellow-deep': '#eab308', // สีเหลืองเข้มสำหรับตัดเส้น/เงา
+                        'pink-main': '#f472b6', // สีชมพูพาสเทลหลัก
+                        'pink-soft': '#fdf2f8', // สีชมพูอ่อนมาก (พื้นหลัง)
+                        'pink-deep': '#db2777', // สีชมพูเข้ม (ตัวหนังสือ)
+                        'cream-main': '#fef3c7', // สีครีมหลัก
+                        'cream-soft': '#fffbeb', // สีครีมอ่อน
+                        'cream-deep': '#d97706', // สีครีม/เหลืองเข้มสำหรับตัดเส้น/เงา
                         'ticket-bg': '#ffffff',
                     }
                 }
@@ -38,8 +38,8 @@
     </script>
     <style>
         body {
-            background-color: #f1f8fc;
-            background-image: radial-gradient(#86cbea 1.2px, transparent 1.2px);
+            background-color: #fdf8f6;
+            background-image: radial-gradient(#f472b6 1.2px, transparent 1.2px);
             background-size: 24px 24px;
             overflow-x: hidden;
         }
@@ -63,7 +63,7 @@
         .svg-float svg {
             width: 100%;
             height: 100%;
-            filter: drop-shadow(0px 2px 4px rgba(134, 203, 234, 0.4));
+            filter: drop-shadow(0px 2px 4px rgba(244, 114, 182, 0.4));
         }
         @keyframes float-around {
             0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
@@ -73,7 +73,7 @@
         }
         /* --- Splash Screen Styles --- */
         #splash-screen {
-            background: linear-gradient(180deg, #eef7fc 0%, #86cbea 100%);
+            background: linear-gradient(180deg, #fdf2f8 0%, #f472b6 100%);
             transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
             z-index: 60;
         }
@@ -103,9 +103,9 @@
             animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
         }
         @keyframes pulse-ring {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(134, 203, 234, 0.6); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(134, 203, 234, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(134, 203, 234, 0); }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.6); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(244, 114, 182, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 114, 182, 0); }
         }
         /* --- Main Ticket Styles --- */
         #main-content {
@@ -122,8 +122,8 @@
             transform: translateY(-50%);
             width: 30px;
             height: 30px;
-            background-color: #f1f8fc;
-            background-image: radial-gradient(#86cbea 1.2px, transparent 1.2px);
+            background-color: #fdf8f6;
+            background-image: radial-gradient(#f472b6 1.2px, transparent 1.2px);
             background-size: 24px 24px;
             border-radius: 50%;
             z-index: 10;
@@ -131,7 +131,7 @@
         .ticket-cutout-left { left: -15px; }
         .ticket-cutout-right { right: -15px; }
         .dashed-divider {
-            border-top: 3px dashed #86cbea;
+            border-top: 3px dashed #f472b6;
             position: relative;
         }
         /* Stamps */
@@ -149,8 +149,8 @@
             pointer-events: none;
         }
         .stamp-p1 {
-            border: 4px solid #86cbea;
-            color: #86cbea;
+            border: 4px solid #f472b6;
+            color: #f472b6;
             width: 100px;
             height: 100px;
             transform: rotate(-15deg);
@@ -162,8 +162,8 @@
             font-size: 40px;
         }
         .stamp-p2 {
-            border: 4px solid #fcf096;
-            color: #eab308;
+            border: 4px solid #fef3c7;
+            color: #d97706;
             width: 120px;
             height: 120px;
             transform: rotate(25deg);
@@ -174,8 +174,8 @@
             line-height: 1.2;
         }
         .stamp-p3 {
-            border: 3px solid #2755ab;
-            color: #2755ab;
+            border: 3px solid #db2777;
+            color: #db2777;
             width: 140px;
             height: 60px;
             border-radius: 5px;
@@ -188,14 +188,14 @@
             width: 100%;
             background: repeating-linear-gradient(
                 90deg,
-                #86cbea, #86cbea 2px, transparent 2px, transparent 5px,
-                #fcf096 5px, #fcf096 8px, transparent 8px, transparent 11px,
-                #2755ab 11px, #2755ab 13px, transparent 13px, transparent 16px
+                #f472b6, #f472b6 2px, transparent 2px, transparent 5px,
+                #fef3c7 5px, #fef3c7 8px, transparent 8px, transparent 11px,
+                #db2777 11px, #db2777 13px, transparent 13px, transparent 16px
             );
         }
         .data-label {
             font-size: 0.7rem;
-            color: #86cbea;
+            color: #f472b6;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 1px;
@@ -204,15 +204,15 @@
         .data-value {
             font-family: 'Space Mono', monospace;
             font-size: 1.1rem;
-            color: #2755ab;
+            color: #db2777;
             font-weight: 700;
         }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f8fc; }
-        ::-webkit-scrollbar-thumb { background: #86cbea; border-radius: 4px; }
+        ::-webkit-scrollbar-track { background: #fdf8f6; }
+        ::-webkit-scrollbar-thumb { background: #f472b6; border-radius: 4px; }
     </style>
 </head>
-<body class="font-sans antialiased min-h-screen relative text-blue-deep">
+<body class="font-sans antialiased min-h-screen relative text-pink-deep">
     <!-- Container for Floating SVGs -->
     <div id="floating-emojis" class="floating-container"></div>
     <!-- ==================== SPLASH SCREEN ==================== -->
@@ -220,14 +220,14 @@
         <div class="cloud cloud-1"></div>
         <div class="cloud cloud-2"></div>
         <div class="relative z-10 flex flex-col items-center">
-            <div class="w-32 h-32 bg-white rounded-3xl shadow-xl flex items-center justify-center mb-6 border-4 border-[#eef7fc] overflow-hidden">
-                <img src="logo1.png" alt="Shop Logo" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            <div class="w-32 h-32 bg-white rounded-3xl shadow-xl flex items-center justify-center mb-6 border-4 border-[#fdf2f8] overflow-hidden">
+                <img id="splash-logo-img" src="logo1.png" alt="Shop Logo" class="w-full h-full object-cover hover:scale-110 transition duration-500">
             </div>
            
-            <h1 class="text-white text-4xl md:text-5xl font-bold tracking-wider mb-2 drop-shadow-md">Pinkjulieland</h1>
-            <p class="text-white text-sm md:text-base tracking-widest uppercase italic font-medium mb-4 drop-shadow-sm">Web Design | Full Service</p>
+            <h1 class="text-white text-3xl md:text-4xl font-bold tracking-wider mb-2 drop-shadow-md text-center px-4">Review For Muay Y Shop</h1>
+            <p class="text-white text-sm md:text-base tracking-widest uppercase italic font-medium mb-4 drop-shadow-sm">Credit & Review Service</p>
            
-            <div class="flex text-yellow-main space-x-1 mb-12 text-xl drop-shadow-sm">
+            <div class="flex text-cream-main space-x-1 mb-12 text-xl drop-shadow-sm">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -235,33 +235,33 @@
                 <i class="fa-solid fa-star"></i>
             </div>
             <button onclick="enterShop()" class="pulse-btn w-20 h-20 bg-white/50 backdrop-blur-md border border-white rounded-full flex items-center justify-center cursor-pointer hover:bg-white/70 transition shadow-lg group">
-                <i class="fa-solid fa-play text-blue-deep text-3xl ml-2 group-hover:scale-110 transition duration-300"></i>
+                <i class="fa-solid fa-play text-pink-deep text-3xl ml-2 group-hover:scale-110 transition duration-300"></i>
             </button>
-            <p class="text-white mt-6 text-sm drop-shadow-sm font-medium">กดปุ่มเพื่อเข้าสู่ร้านจูนะคะ</p>
+            <p class="text-white mt-6 text-sm drop-shadow-sm font-medium">กดปุ่มเพื่อเข้าชมรีวิวร้านหมวยยี่นะคะ</p>
         </div>
     </div>
     <!-- ==================== MAIN CONTENT (TICKET) ==================== -->
     <div id="main-content" class="py-10 px-4 w-full flex justify-center">
        
-        <div class="w-full max-w-3xl bg-ticket-bg rounded-3xl shadow-2xl overflow-hidden relative border-2 border-blue-100">
+        <div class="w-full max-w-3xl bg-ticket-bg rounded-3xl shadow-2xl overflow-hidden relative border-2 border-pink-100">
            
             <!-- HEADER -->
-            <div class="bg-blue-main p-6 flex items-center justify-between text-white relative overflow-hidden">
+            <div class="bg-pink-main p-6 flex items-center justify-between text-white relative overflow-hidden">
                 <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(white 2px, transparent 2px); background-size: 15px 15px;"></div>
                
                 <div class="flex items-center gap-4 relative z-10">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-blue-main shadow-sm overflow-hidden border-2 border-yellow-main">
-                        <img src="logo1.png" alt="Shop Logo" class="w-full h-full object-cover">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-pink-main shadow-sm overflow-hidden border-2 border-cream-main">
+                        <img id="header-logo-img" src="logo1.png" alt="Shop Logo" class="w-full h-full object-cover">
                     </div>
                     <div>
                         <h2 class="text-2xl font-bold tracking-widest drop-shadow-sm uppercase">Boarding Pass</h2>
-                        <p class="text-sm uppercase tracking-wider opacity-90">Passenger Name</p>
-                        <p class="font-mono text-xl drop-shadow-sm text-yellow-main">PINKJULIELAND</p>
+                        <p class="text-sm uppercase tracking-wider opacity-90">Store Name</p>
+                        <p class="font-mono text-xl drop-shadow-sm text-cream-main">MUAY Y SHOP</p>
                     </div>
                 </div>
                 <div class="text-right hidden sm:block relative z-10">
-                    <h1 class="text-3xl font-extrabold italic drop-shadow-sm text-yellow-main">Pinkjulieland</h1>
-                    <p class="text-xs uppercase opacity-90">Web Design Studio</p>
+                    <h1 class="text-2xl font-extrabold italic drop-shadow-sm text-cream-main">Review For Muay Y</h1>
+                    <p class="text-xs uppercase opacity-90">Credit & Reviews</p>
                 </div>
             </div>
             <!-- SECTION 1: Intro -->
@@ -269,143 +269,162 @@
                 <div class="stamp stamp-p1 top-4 right-10"></div>
                 <div class="stamp stamp-p3 bottom-10 left-10"><i class="fa-solid fa-check-circle mr-2"></i>VISA<br>APPROVED</div>
                 <div class="text-center mb-8 relative z-10">
-                    <p class="text-blue-main mb-2 font-medium"><i class="fa-solid fa-heart text-yellow-deep"></i> ยินดีต้อนรับเข้าสู่โลกของจูนะคะ <i class="fa-solid fa-heart text-yellow-deep"></i></p>
-                    <h3 class="text-2xl md:text-3xl font-bold text-blue-deep mb-2">ร้านจูรับทำเว็บไซต์ครบวงจร</h3>
-                    <p class="text-blue-main text-sm font-medium">พร้อมบริการรับส่งสติกเกอร์ไลน์ และจำหน่ายแอปเกม iOS / Android</p>
+                    <p class="text-pink-main mb-2 font-medium"><i class="fa-solid fa-heart text-cream-deep"></i> ยินดีต้อนรับเข้าสู่พื้นที่รีวิวและเครดิตร้านหมวยยี่ค่ะ <i class="fa-solid fa-heart text-cream-deep"></i></p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-pink-deep mb-2">Review For Muay Y Shop</h3>
+                    <p class="text-pink-main text-sm font-medium">ศูนย์รวมรีวิวความประทับใจจากลูกค้าตัวจริง มั่นใจ ปลอดภัย ได้รับของชัวร์!</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    <div><p class="data-label">From</p><p class="data-value">IDEA</p></div>
-                    <div><p class="data-label">To</p><p class="data-value">WEBSITE</p></div>
-                    <div><p class="data-label">Gate</p><p class="data-value text-yellow-deep">JULIE</p></div>
-                    <div><p class="data-label">Status</p><p class="data-value text-blue-deep">OPEN</p></div>
+                    <div><p class="data-label">From</p><p class="data-value">TRUST</p></div>
+                    <div><p class="data-label">To</p><p class="data-value">MUAY Y</p></div>
+                    <div><p class="data-label">Gate</p><p class="data-value text-cream-deep">CREDIT</p></div>
+                    <div><p class="data-label">Status</p><p class="data-value text-pink-deep">VERIFIED</p></div>
                 </div>
-                <!-- การ์ดงานที่รับทำ -->
-                <div class="bg-yellow-soft p-5 rounded-2xl border-2 border-yellow-main shadow-sm relative z-10">
-                    <h4 class="font-bold text-blue-deep mb-3"><i class="fa-solid fa-palette mr-2 text-blue-main"></i> งานที่รับทำ</h4>
-                    <ul class="space-y-2 text-blue-deep text-sm">
-                        <li><i class="fa-solid fa-star text-yellow-deep mr-2 text-xs"></i> เว็บเรทราคาแอปพรีเมียม</li>
-                        <li><i class="fa-solid fa-star text-yellow-deep mr-2 text-xs"></i> เว็บเรทราคารับเติมเกมส์</li>
-                        <li><i class="fa-solid fa-star text-yellow-deep mr-2 text-xs"></i> เว็บเรทราคารับทำป้าย</li>
-                        <li><i class="fa-solid fa-star text-yellow-deep mr-2 text-xs"></i> เว็บอื่น ๆ สอบถามเพิ่มเติมได้ค่ะ</li>
-                    </ul>
+                <!-- การ์ดสรุปคะแนนรีวิว -->
+                <div class="bg-cream-soft p-5 rounded-2xl border-2 border-cream-main shadow-sm relative z-10 text-center">
+                    <h4 class="font-bold text-pink-deep mb-2"><i class="fa-solid fa-star text-cream-deep mr-2"></i> คะแนนความพึงพอใจเฉลี่ย</h4>
+                    <div class="flex justify-center items-center gap-2 mb-1">
+                        <span id="average-rating" class="text-4xl font-mono font-bold text-pink-deep">5.0</span>
+                        <div class="text-cream-deep text-xl">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-pink-deep opacity-80">จากรีวิวและความคิดเห็นทั้งหมดของลูกค้าจริง</p>
                 </div>
             </div>
             <div class="dashed-divider">
                 <div class="ticket-cutout-left"></div>
                 <div class="ticket-cutout-right"></div>
             </div>
-            <!-- SECTION 2: Portfolio & Pricing -->
+            <!-- SECTION 2: Reviews List & Management -->
             <div class="p-8 relative bg-white">
-                <div class="stamp stamp-p2 top-20 right-5"><i class="fa-solid fa-plane-departure mb-1"></i>DEP<br><span class="text-sm text-blue-main">THAILAND</span></div>
-                <div class="grid md:grid-cols-2 gap-8 relative z-10">
-                    <div>
-                        <h4 class="font-bold text-blue-deep mb-4"><i class="fa-solid fa-star text-yellow-deep mr-2"></i> ตัวอย่างงาน</h4>
-                        <div class="space-y-4">
-                            <!-- การ์ดตัวอย่างงาน 1 -->
-                            <div class="bg-blue-soft p-4 rounded-2xl border-2 border-blue-main">
-                                <p class="text-xs font-bold text-blue-deep uppercase mb-3">โทนมืด (Dark Theme)</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <a href="#" class="px-3 py-1 bg-blue-deep text-white text-xs rounded-full hover:bg-yellow-deep transition shadow-sm">DD3</a>
-                                    <a href="#" class="px-3 py-1 bg-blue-deep text-white text-xs rounded-full hover:bg-yellow-deep transition shadow-sm">PinkBlue</a>
-                                    <a href="#" class="px-3 py-1 bg-blue-deep text-white text-xs rounded-full hover:bg-yellow-deep transition shadow-sm">PinkDark</a>
-                                    <a href="#" class="px-3 py-1 bg-blue-deep text-white text-xs rounded-full hover:bg-yellow-deep transition shadow-sm">JuGame</a>
-                                </div>
+                <div class="stamp stamp-p2 top-20 right-5"><i class="fa-solid fa-plane-departure mb-1"></i>DEP<br><span class="text-sm text-pink-main">THAILAND</span></div>
+                
+                <div class="flex justify-between items-center mb-6 relative z-10">
+                    <h4 class="font-bold text-pink-deep text-lg"><i class="fa-solid fa-comments mr-2 text-pink-main"></i> รายการรีวิวและเครดิตจากลูกค้า</h4>
+                    <button onclick="toggleAdminPanel()" class="px-3 py-1.5 bg-pink-soft text-pink-deep border border-pink-main rounded-xl text-xs font-bold hover:bg-pink-main hover:text-white transition shadow-sm">
+                        <i class="fa-solid fa-lock mr-1"></i> ระบบหลังบ้าน
+                    </button>
+                </div>
+
+                <!-- ส่วนระบบหลังบ้าน (ซ่อนไว้โดยค่าเริ่มต้น) -->
+                <div id="admin-panel" class="hidden bg-pink-soft p-5 rounded-2xl border-2 border-pink-main mb-6 relative z-10">
+                    <h5 class="font-bold text-pink-deep mb-3 text-sm"><i class="fa-solid fa-gear mr-2 text-pink-deep"></i> จัดการร้านค้า (Admin Control)</h5>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <label class="block text-xs font-bold text-pink-deep mb-1">เปลี่ยนรูปโปรร้าน (วาง URL รูปภาพใหม่):</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="new-logo-url" placeholder="เช่น logo1.png หรือลิงก์รูปภาพ" class="flex-grow px-3 py-1.5 bg-white border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
+                                <button onclick="updateStoreLogo()" class="px-4 py-1.5 bg-pink-main text-white text-xs font-bold rounded-xl hover:bg-pink-deep transition shadow-sm">อัปเดต</button>
                             </div>
-                            <!-- การ์ดตัวอย่างงาน 2 -->
-                            <div class="bg-yellow-soft p-4 rounded-2xl border-2 border-yellow-main">
-                                <p class="text-xs font-bold text-blue-deep uppercase mb-3">พาสเทล (Pastel Theme)</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <a href="#" class="px-3 py-1 bg-white text-blue-main border border-blue-main text-xs rounded-full hover:bg-blue-main hover:text-white transition shadow-sm font-medium">Wish UWU</a>
-                                    <a href="#" class="px-3 py-1 bg-white text-blue-main border border-blue-main text-xs rounded-full hover:bg-blue-main hover:text-white transition shadow-sm font-medium">Regal Torrone</a>
-                                </div>
-                            </div>
-                            <a href="https://www.facebook.com/profile.php?id=61554192600355" target="_blank" class="block w-full text-center py-2.5 bg-yellow-main text-blue-deep rounded-xl text-sm hover:bg-yellow-deep transition hover:text-white font-bold shadow-sm">
-                                <i class="fa-brands fa-facebook mr-1"></i> ดูตัวอย่างเพิ่มเติมที่อัลบั้มเพจ
-                            </a>
                         </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-blue-deep mb-4"><i class="fa-solid fa-tag mr-2 text-blue-main"></i> เรทราคาทำเว็บ</h4>
-                        <!-- การ์ดราคา -->
-                        <div class="bg-blue-soft border-2 border-blue-main rounded-2xl p-5 shadow-sm">
-                            <div class="flex justify-between items-end border-b border-blue-main pb-3 mb-3">
-                                <span class="text-blue-deep font-medium">ราคาเริ่มต้น</span>
-                                <span class="text-3xl font-mono text-yellow-deep font-bold drop-shadow-sm">129.-</span>
-                            </div>
-                            <p class="text-xs text-blue-deep opacity-80 mb-5">(สำหรับรายละเอียดไม่เกิน 200 lines และใส่โลโก้อย่างเดียว)</p>
-                            <ul class="text-sm text-blue-deep space-y-2 mb-5 font-medium">
-                                <li class="flex justify-between border-b border-blue-100 pb-1"><span>เกิน 200 lines</span> <span class="font-mono font-bold text-blue-main">เริ่ม 139.-</span></li>
-                                <li class="flex justify-between border-b border-blue-100 pb-1"><span>เกิน 400 lines</span> <span class="font-mono font-bold text-blue-main">เริ่ม 189.-</span></li>
-                                <li class="flex justify-between border-b border-blue-100 pb-1"><span>เกิน 600 lines</span> <span class="font-mono font-bold text-blue-main">เริ่ม 249.-</span></li>
-                            </ul>
-                            <div class="bg-white p-3 rounded-xl text-xs text-blue-deep space-y-2 border border-blue-main shadow-sm">
-                                <p><i class="fa-solid fa-plus text-yellow-deep mr-2"></i> เพิ่มรูปแบนเนอร์ 1–2 รูป <strong class="text-blue-main">+29.-</strong></p>
-                                <p><i class="fa-solid fa-pen text-yellow-deep mr-2"></i> แก้ไขข้อมูลฟรี 1 ครั้ง</p>
-                                <p><i class="fa-solid fa-image text-yellow-deep mr-2"></i> เปลี่ยนรูปจุดละ <strong class="text-blue-main">29.-</strong></p>
-                            </div>
+                        <div>
+                            <p class="text-xs font-bold text-pink-deep mb-1">ลบคอมเมนต์ปั่นเครดิต / รีวิวที่ไม่เหมาะสม:</p>
+                            <p class="text-[11px] text-pink-deep opacity-80">สามารถกดปุ่ม "ลบ" ที่ด้านหลังรายการรีวัยด้านล่างนี้ได้ทันทีเพื่อจัดการข้อมูล</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- รายการรีวิวจำลอง (สามารถกดลบได้จากหลังบ้าน) -->
+                <div id="reviews-container" class="space-y-4 relative z-10">
+                    <!-- รีวิวที่ 1 -->
+                    <div class="review-item bg-pink-soft p-4 rounded-2xl border-2 border-pink-main flex justify-between items-start gap-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-sm text-pink-deep">คุณแอม (ลูกค้าประจำ)</span>
+                                <span class="text-xs text-cream-deep"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                            </div>
+                            <p class="text-xs text-pink-deep opacity-90">"บริการดีมากค่ะ ส่งไวทันใจ แม่ค้าน่ารักคุยง่ายมาก ได้รับสินค้าชัวร์แน่นอน 100% คร่าา"</p>
+                        </div>
+                        <button onclick="deleteReview(this)" class="admin-delete-btn hidden px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs font-bold hover:bg-red-200 transition flex-shrink-0">ลบ</button>
+                    </div>
+                    <!-- รีวิวที่ 2 -->
+                    <div class="review-item bg-cream-soft p-4 rounded-2xl border-2 border-cream-main flex justify-between items-start gap-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-sm text-pink-deep">คุณมายด์</span>
+                                <span class="text-xs text-cream-deep"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                            </div>
+                            <p class="text-xs text-pink-deep opacity-90">"ประทับใจมากค่ะ ร้านนี้เครดิตแน่นจริง อุดหนุนรอบสองแล้วไม่เคยผิดหวังเลย"</p>
+                        </div>
+                        <button onclick="deleteReview(this)" class="admin-delete-btn hidden px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs font-bold hover:bg-red-200 transition flex-shrink-0">ลบ</button>
+                    </div>
+                    <!-- รีวิวที่ 3 (จำลองคอมเมนต์ปั่น) -->
+                    <div class="review-item bg-pink-soft p-4 rounded-2xl border-2 border-pink-main flex justify-between items-start gap-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-sm text-pink-deep">user_spam99</span>
+                                <span class="text-xs text-cream-deep"><i class="fa-solid fa-star"></i></span>
+                            </div>
+                            <p class="text-xs text-pink-deep opacity-90">"ข้อความทดสอบปั่นเครดิตทั่วไป..."</p>
+                        </div>
+                        <button onclick="deleteReview(this)" class="admin-delete-btn hidden px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs font-bold hover:bg-red-200 transition flex-shrink-0">ลบ</button>
+                    </div>
+                </div>
+
             </div>
             <div class="dashed-divider">
                 <div class="ticket-cutout-left"></div>
                 <div class="ticket-cutout-right"></div>
             </div>
-            <!-- SECTION 3: Courses & Apps -->
-            <div class="p-8 bg-blue-soft relative">
-                <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(45deg, #fcf096 0, #fcf096 2px, transparent 2px, transparent 10px);"></div>
+            <!-- SECTION 3: Courses & Apps (คงโครงสร้างเดิมแบบเป๊ะๆ) -->
+            <div class="p-8 bg-pink-soft relative">
+                <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(45deg, #fef3c7 0, #fef3c7 2px, transparent 2px, transparent 10px);"></div>
                 <div class="relative z-10">
                     <!-- การ์ดคอร์สเรียน -->
-                    <div class="bg-yellow-soft rounded-2xl shadow-sm border-2 border-yellow-main p-5 mb-8 flex flex-col md:flex-row gap-4 items-center transition hover:shadow-md">
-                        <div class="w-16 h-16 bg-blue-deep text-yellow-main rounded-2xl flex flex-col items-center justify-center flex-shrink-0 shadow-sm border-2 border-yellow-main">
+                    <div class="bg-cream-soft rounded-2xl shadow-sm border-2 border-cream-main p-5 mb-8 flex flex-col md:flex-row gap-4 items-center transition hover:shadow-md">
+                        <div class="w-16 h-16 bg-pink-deep text-cream-main rounded-2xl flex flex-col items-center justify-center flex-shrink-0 shadow-sm border-2 border-cream-main">
                             <i class="fa-solid fa-laptop-code text-2xl"></i>
                         </div>
                         <div class="flex-grow text-center md:text-left">
-                            <h4 class="font-bold text-blue-deep text-lg">คอร์สสอนทำเว็บร้าน สไตล์พิ้งจู <i class="fa-solid fa-heart text-blue-main ml-1"></i></h4>
-                            <p class="text-sm text-blue-deep opacity-80 mt-1">สอนตั้งแต่ 0 → ทำเป็นเว็บใช้งานได้จริง</p>
+                            <h4 class="font-bold text-pink-deep text-lg">คอร์สสอนทำเว็บร้าน สไตล์หมวยยี่ <i class="fa-solid fa-heart text-pink-main ml-1"></i></h4>
+                            <p class="text-sm text-pink-deep opacity-80 mt-1">สอนตั้งแต่ 0 → ทำเป็นเว็บใช้งานได้จริง</p>
                         </div>
-                        <div class="text-center md:text-right mt-2 md:mt-0"><p class="text-3xl font-mono text-blue-main font-bold">299.-</p></div>
+                        <div class="text-center md:text-right mt-2 md:mt-0"><p class="text-3xl font-mono text-pink-main font-bold">299.-</p></div>
                     </div>
-                    <h4 class="font-bold text-blue-deep mb-5 text-center uppercase tracking-widest"><i class="fa-solid fa-tablet-screen-button mr-2 text-yellow-deep"></i> GOODNOTES APPLICATIONS</h4>
+                    <h4 class="font-bold text-pink-deep mb-5 text-center uppercase tracking-widest"><i class="fa-solid fa-tablet-screen-button mr-2 text-cream-deep"></i> GOODNOTES APPLICATIONS</h4>
                    
                     <div class="grid md:grid-cols-3 gap-5">
                         <!-- การ์ดแอป 1 -->
-                        <div class="bg-white p-5 rounded-2xl border-t-4 border-yellow-main shadow-sm text-sm hover:-translate-y-1 transition duration-300 border-x border-b border-gray-100">
-                            <h5 class="font-bold text-yellow-deep mb-3">รุ่นพิเศษ (ถาวร)</h5>
-                            <ul class="text-blue-deep opacity-80 text-xs space-y-2 mb-4">
-                                <li><i class="fa-solid fa-star text-yellow-main mr-1"></i> สมุด/ไวท์บอร์ดไม่จำกัด</li>
-                                <li><i class="fa-solid fa-star text-yellow-main mr-1"></i> แชร์ลิ้งค์แบบสาธารณะ</li>
-                                <li><i class="fa-solid fa-star text-yellow-main mr-1"></i> ถอดเสียงแบบไม่จำกัด</li>
+                        <div class="bg-white p-5 rounded-2xl border-t-4 border-cream-main shadow-sm text-sm hover:-translate-y-1 transition duration-300 border-x border-b border-gray-100">
+                            <h5 class="font-bold text-cream-deep mb-3">รุ่นพิเศษ (ถาวร)</h5>
+                            <ul class="text-pink-deep opacity-80 text-xs space-y-2 mb-4">
+                                <li><i class="fa-solid fa-star text-cream-main mr-1"></i> สมุด/ไวท์บอร์ดไม่จำกัด</li>
+                                <li><i class="fa-solid fa-star text-cream-main mr-1"></i> แชร์ลิ้งค์แบบสาธารณะ</li>
+                                <li><i class="fa-solid fa-star text-cream-main mr-1"></i> ถอดเสียงแบบไม่จำกัด</li>
                             </ul>
-                            <div class="mt-auto bg-yellow-soft p-3 rounded-xl text-center border border-yellow-main">
-                                <p class="text-blue-deep text-xs mb-1 font-medium">หาร 5 คน: <strong class="text-blue-main text-sm font-mono">149.-</strong></p>
-                                <p class="text-blue-deep text-xs font-medium">ส่วนตัว: <strong class="text-blue-main text-sm font-mono">490.-</strong></p>
+                            <div class="mt-auto bg-cream-soft p-3 rounded-xl text-center border border-cream-main">
+                                <p class="text-pink-deep text-xs mb-1 font-medium">หาร 5 คน: <strong class="text-pink-main text-sm font-mono">149.-</strong></p>
+                                <p class="text-pink-deep text-xs font-medium">ส่วนตัว: <strong class="text-pink-main text-sm font-mono">490.-</strong></p>
                             </div>
                         </div>
                         <!-- การ์ดแอป 2 -->
-                        <div class="bg-white p-5 rounded-2xl border-t-4 border-blue-main shadow-sm text-sm hover:-translate-y-1 transition duration-300 border-x border-b border-gray-100">
-                            <h5 class="font-bold text-blue-main mb-3">Essential (รายปี)</h5>
-                            <ul class="text-blue-deep opacity-80 text-xs space-y-2 mb-4">
-                                <li><i class="fa-solid fa-star text-blue-main mr-1"></i> สมุดโน๊ตไม่จำกัด</li>
-                                <li><i class="fa-solid fa-star text-blue-main mr-1"></i> AI Math (525 cr)</li>
-                                <li><i class="fa-solid fa-star text-blue-main mr-1"></i> ถอดเสียงไม่จำกัด</li>
+                        <div class="bg-white p-5 rounded-2xl border-t-4 border-pink-main shadow-sm text-sm hover:-translate-y-1 transition duration-300 border-x border-b border-gray-100">
+                            <h5 class="font-bold text-pink-main mb-3">Essential (รายปี)</h5>
+                            <ul class="text-pink-deep opacity-80 text-xs space-y-2 mb-4">
+                                <li><i class="fa-solid fa-star text-pink-main mr-1"></i> สมุดโน๊ตไม่จำกัด</li>
+                                <li><i class="fa-solid fa-star text-pink-main mr-1"></i> AI Math (525 cr)</li>
+                                <li><i class="fa-solid fa-star text-pink-main mr-1"></i> ถอดเสียงไม่จำกัด</li>
                             </ul>
-                            <div class="mt-auto bg-blue-soft p-3 rounded-xl text-center border border-blue-main">
-                                <p class="text-blue-deep text-xs mb-1 font-medium">หาร 5 คน: <strong class="text-blue-deep text-sm font-mono">79.-</strong></p>
-                                <p class="text-blue-deep text-xs font-medium">ส่วนตัว: <strong class="text-blue-deep text-sm font-mono">229.-</strong></p>
+                            <div class="mt-auto bg-pink-soft p-3 rounded-xl text-center border border-pink-main">
+                                <p class="text-pink-deep text-xs mb-1 font-medium">หาร 5 คน: <strong class="text-pink-deep text-sm font-mono">79.-</strong></p>
+                                <p class="text-pink-deep text-xs font-medium">ส่วนตัว: <strong class="text-pink-deep text-sm font-mono">229.-</strong></p>
                             </div>
                         </div>
                         <!-- การ์ดแอป 3 -->
-                        <div class="bg-white p-5 rounded-2xl border-t-4 border-blue-deep shadow-sm text-sm hover:-translate-y-1 transition duration-300 border-x border-b border-gray-100">
-                            <h5 class="font-bold text-blue-deep mb-3">Pro (รายปี)</h5>
-                            <ul class="text-blue-deep opacity-80 text-xs space-y-2 mb-4">
-                                <li><i class="fa-solid fa-star text-blue-deep mr-1"></i> รวมทุกอย่างใน Essential</li>
-                                <li><i class="fa-solid fa-star text-blue-deep mr-1"></i> จด/สรุป AI เรียลไทม์</li>
-                                <li><i class="fa-solid fa-star text-blue-deep mr-1"></i> เชื่อม Google Calendar</li>
+                        <div class="bg-white p-5 rounded-2xl border-t-4 border-pink-main shadow-sm text-sm hover:-translate-y-1 transition duration-300 border-x border-b border-gray-100">
+                            <h5 class="font-bold text-pink-deep mb-3">Pro (รายปี)</h5>
+                            <ul class="text-pink-deep opacity-80 text-xs space-y-2 mb-4">
+                                <li><i class="fa-solid fa-star text-pink-deep mr-1"></i> รวมทุกอย่างใน Essential</li>
+                                <li><i class="fa-solid fa-star text-pink-deep mr-1"></i> จด/สรุป AI เรียลไทม์</li>
+                                <li><i class="fa-solid fa-star text-pink-deep mr-1"></i> เชื่อม Google Calendar</li>
                             </ul>
-                            <div class="mt-auto bg-blue-soft p-3 rounded-xl text-center border border-blue-deep">
-                                <p class="text-blue-deep text-xs mb-1 font-medium">หาร 5 คน: <strong class="text-blue-deep text-sm font-mono">149.-</strong></p>
-                                <p class="text-blue-deep text-xs font-medium">ส่วนตัว: <strong class="text-blue-deep text-sm font-mono">490.-</strong></p>
+                            <div class="mt-auto bg-pink-soft p-3 rounded-xl text-center border border-pink-main">
+                                <p class="text-pink-deep text-xs mb-1 font-medium">หาร 5 คน: <strong class="text-pink-deep text-sm font-mono">149.-</strong></p>
+                                <p class="text-pink-deep text-xs font-medium">ส่วนตัว: <strong class="text-pink-deep text-sm font-mono">490.-</strong></p>
                             </div>
                         </div>
                     </div>
@@ -419,46 +438,46 @@
             <div class="p-8 bg-white relative">
                 <div class="grid md:grid-cols-2 gap-8 mb-6">
                     <div>
-                        <h4 class="font-bold text-blue-deep mb-4"><i class="fa-solid fa-clipboard-list mr-2 text-yellow-deep"></i> ขั้นตอน & กฎของร้าน</h4>
+                        <h4 class="font-bold text-pink-deep mb-4"><i class="fa-solid fa-clipboard-list mr-2 text-cream-deep"></i> ขั้นตอน & กฎของร้าน</h4>
                         <!-- การ์ดกฎร้าน -->
-                        <div class="bg-yellow-soft p-5 rounded-2xl text-sm text-blue-deep border-2 border-yellow-main shadow-sm">
-                            <ul class="space-y-3 mb-4 border-b border-yellow-main pb-4 font-medium">
-                                <li class="flex items-start"><i class="fa-solid fa-heart text-blue-main w-5 mt-0.5"></i> <span>รอคิวงาน 4–8 ชม.</span></li>
-                                <li class="flex items-start"><i class="fa-solid fa-heart text-blue-main w-5 mt-0.5"></i> <span>กรอกฟอร์ม / แจ้งยอด / โอนเงิน</span></li>
+                        <div class="bg-cream-soft p-5 rounded-2xl text-sm text-pink-deep border-2 border-cream-main shadow-sm">
+                            <ul class="space-y-3 mb-4 border-b border-cream-main pb-4 font-medium">
+                                <li class="flex items-start"><i class="fa-solid fa-heart text-pink-main w-5 mt-0.5"></i> <span>ตรวจสอบเครดิตก่อนสั่งซื้อทุกครั้ง</span></li>
+                                <li class="flex items-start"><i class="fa-solid fa-heart text-pink-main w-5 mt-0.5"></i> <span>ติดต่อสอบถามข้อมูลเพิ่มเติมได้ตลอดเวลา</span></li>
                             </ul>
-                            <p class="text-[10px] text-yellow-deep uppercase font-bold mb-2 tracking-wider">Notice</p>
+                            <p class="text-[10px] text-cream-deep uppercase font-bold mb-2 tracking-wider">Notice</p>
                             <ul class="space-y-1 text-xs opacity-80 font-medium">
                                 <li>• โอนเงินแล้วไม่คืนเงินทุกกรณี</li>
-                                <li>• ยกเลิกหลังเริ่มทำ คืน 50%</li>
+                                <li>• ข้อมูลเครดิตและรีวิวของแท้จากลูกค้า</li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <h4 class="font-bold text-blue-deep mb-4"><i class="fa-solid fa-address-card mr-2 text-blue-main"></i> ช่องทางการติดต่อ</h4>
+                        <h4 class="font-bold text-pink-deep mb-4"><i class="fa-solid fa-address-card mr-2 text-pink-main"></i> ช่องทางการติดต่อ</h4>
                         <div class="space-y-3">
                             <!-- LINE -->
-                            <a href="https://lin.ee/t0qYbAl" target="_blank" class="flex items-center p-3 bg-blue-soft text-blue-deep rounded-2xl hover:bg-yellow-soft transition border-2 border-blue-main shadow-sm">
-                                <i class="fa-brands fa-line text-3xl mr-4 ml-2 text-blue-main"></i>
-                                <div><p class="font-bold text-sm">LINE Official</p><p class="text-xs opacity-80">@pinkjulieland</p></div>
+                            <a href="https://lin.ee/t0qYbAl" target="_blank" class="flex items-center p-3 bg-pink-soft text-pink-deep rounded-2xl hover:bg-cream-soft transition border-2 border-pink-main shadow-sm">
+                                <i class="fa-brands fa-line text-3xl mr-4 ml-2 text-pink-main"></i>
+                                <div><p class="font-bold text-sm">LINE Official</p><p class="text-xs opacity-80">@352gmaft</p></div>
                             </a>
                             <!-- Facebook -->
-                            <a href="https://www.facebook.com/profile.php?id=61554192600355" target="_blank" class="flex items-center p-3 bg-yellow-soft text-blue-deep rounded-2xl hover:bg-blue-soft transition border-2 border-yellow-main shadow-sm">
-                                <i class="fa-brands fa-facebook text-3xl mr-4 ml-2 text-yellow-deep"></i>
-                                <div><p class="font-bold text-sm">Facebook Page</p><p class="text-xs opacity-80">Pinkjulieland</p></div>
+                            <a href="https://www.facebook.com" target="_blank" class="flex items-center p-3 bg-cream-soft text-pink-deep rounded-2xl hover:bg-pink-soft transition border-2 border-cream-main shadow-sm">
+                                <i class="fa-brands fa-facebook text-3xl mr-4 ml-2 text-cream-deep"></i>
+                                <div><p class="font-bold text-sm">Facebook Page</p><p class="text-xs opacity-80">s𑄝l݂mua݁yiꫀིྀა ィ</p></div>
                             </a>
                             <!-- Instagram -->
-                            <a href="https://www.instagram.com/pinkjulie.land" target="_blank" class="flex items-center p-3 bg-white text-blue-deep rounded-2xl hover:bg-blue-soft transition border-2 border-blue-deep shadow-sm">
-                                <i class="fa-brands fa-instagram text-3xl mr-4 ml-2 text-blue-deep"></i>
-                                <div><p class="font-bold text-sm">Instagram</p><p class="text-xs opacity-80">@pinkjulie.land</p></div>
+                            <a href="https://www.instagram.com" target="_blank" class="flex items-center p-3 bg-white text-pink-deep rounded-2xl hover:bg-pink-soft transition border-2 border-pink-deep shadow-sm">
+                                <i class="fa-brands fa-instagram text-3xl mr-4 ml-2 text-pink-deep"></i>
+                                <div><p class="font-bold text-sm">Instagram</p><p class="text-xs opacity-80">@muayy.shop</p></div>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="mt-10 text-center">
-                    <p class="text-xs font-bold text-blue-main uppercase tracking-widest mb-2">Ticket Confirmation</p>
+                    <p class="text-xs font-bold text-pink-main uppercase tracking-widest mb-2">Ticket Confirmation</p>
                     <div class="barcode mb-3 mx-auto max-w-sm opacity-80 rounded-sm"></div>
-                    <p class="font-mono text-sm tracking-[0.3em] text-blue-deep">PKJL-<span class="text-yellow-deep">2024</span>-PASTEL-<span class="text-blue-main">BLUE</span></p>
-                    <p class="text-blue-deep mt-6 text-sm font-bold tracking-wide"><i class="fa-solid fa-heart text-blue-main mr-1"></i> ขอบคุณที่ไว้วางใจ Pinkjulieland <i class="fa-solid fa-heart text-yellow-deep ml-1"></i></p>
+                    <p class="font-mono text-sm tracking-[0.3em] text-pink-deep">MUAY-<span class="text-cream-deep">2026</span>-REVIEW-<span class="text-pink-main">SHOP</span></p>
+                    <p class="text-pink-deep mt-6 text-sm font-bold tracking-wide"><i class="fa-solid fa-heart text-pink-main mr-1"></i> ขอบคุณที่ไว้วางใจ Review For Muay Y Shop <i class="fa-solid fa-heart text-cream-deep ml-1"></i></p>
                 </div>
             </div>
         </div>
@@ -468,7 +487,6 @@
         function createFloatingSVGs() {
             const container = document.getElementById('floating-emojis');
            
-            // ชุด SVG รูปทรงน่ารักๆ สไตล์พาสเทล
             const svgs = [
                 '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>', // หัวใจ
                 '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>', // ดาวประกายวิ้งๆ
@@ -477,8 +495,7 @@
                 '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8"/></svg>' // วงกลมบับเบิ้ล
             ];
            
-            // ชุดสีโทนฟ้าน้ำทะเล-เหลืองพาสเทล ให้ลอยละมุนๆ
-            const pastelColors = ['#86cbea', '#2755ab', '#ffffff', '#fcf096', '#eef7fc'];
+            const pastelColors = ['#f472b6', '#db2777', '#ffffff', '#fef3c7', '#fdf2f8'];
             const svgCount = 18;
             for (let i = 0; i < svgCount; i++) {
                 const span = document.createElement('span');
@@ -509,7 +526,49 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 800);
         }
-        // Initialize SVGs on load
+
+        // --- ระบบหลังบ้านและการจัดการรีวิว ---
+        function toggleAdminPanel() {
+            const panel = document.getElementById('admin-panel');
+            panel.classList.toggle('hidden');
+            
+            // สลับแสดง/ซ่อน ปุ่มลบรีวิว
+            const deleteBtns = document.querySelectorAll('.admin-delete-btn');
+            deleteBtns.forEach(btn => {
+                btn.classList.toggle('hidden');
+            });
+        }
+
+        function updateStoreLogo() {
+            const urlInput = document.getElementById('new-logo-url').value.trim();
+            if (urlInput) {
+                document.getElementById('splash-logo-img').src = urlInput;
+                document.getElementById('header-logo-img').src = urlInput;
+                alert('อัปเดตรูปโปรไฟล์ร้านเรียบร้อยแล้วค่ะ! ✨');
+            } else {
+                alert('กรุณากรอกลิงก์รูปภาพก่อนนะคะ');
+            }
+        }
+
+        function deleteReview(button) {
+            if (confirm('ต้องการลบคอมเมนต์หรือรีวิวนี้ใช่ไหมคะ?')) {
+                const reviewItem = button.closest('.review-item');
+                reviewItem.remove();
+                updateAverageRating();
+            }
+        }
+
+        function updateAverageRating() {
+            const remainingReviews = document.querySelectorAll('.review-item');
+            const count = remainingReviews.length;
+            if (count === 0) {
+                document.getElementById('average-rating').innerText = '0.0';
+            } else {
+                // ตัวอย่างสมมติคำนวณคะแนนเฉลี่ยคร่าวๆ จากจำนวนรีวิวที่เหลือ
+                document.getElementById('average-rating').innerText = '5.0';
+            }
+        }
+
         window.onload = createFloatingSVGs;
     </script>
 </body>
