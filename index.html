@@ -42,7 +42,6 @@
             background-size: 28px 28px;
             overflow-x: hidden;
         }
-        /* เอฟเฟกต์ดาวสีขาวลอยเฉพาะหน้าแรก (Splash Screen) */
         .floating-container {
             position: fixed;
             top: 0;
@@ -188,9 +187,8 @@
     </style>
 </head>
 <body class="font-sans antialiased min-h-screen relative text-pink-deep">
-    <!-- ==================== SPLASH SCREEN (หน้าแรกมีดาวสีขาวลอยวิบวับ) ==================== -->
+    <!-- ==================== SPLASH SCREEN ==================== -->
     <div id="splash-screen" class="fixed inset-0 flex flex-col items-center justify-center">
-        <!-- ดาวสีขาวลอยเฉพาะหน้าแรก -->
         <div id="floating-emojis" class="floating-container"></div>
 
         <div class="cloud cloud-1"></div>
@@ -221,7 +219,7 @@
         </div>
     </div>
 
-    <!-- ==================== MAIN CONTENT (หน้าถัดไป ไม่มีดาวลอยแล้ว) ==================== -->
+    <!-- ==================== MAIN CONTENT ==================== -->
     <div id="main-content" class="py-10 px-4 w-full flex justify-center">
         <div class="w-full max-w-3xl bg-ticket-bg rounded-3xl shadow-2xl overflow-hidden relative border-2 border-pink-main">
            
@@ -294,7 +292,7 @@
                     </button>
                 </div>
 
-                <!-- ฟอร์มให้ลูกค้ามาคอมเมนต์ + เลือกรูปภาพจากเครื่อง -->
+                <!-- ฟอร์มให้ลูกค้ามาคอมเมนต์ -->
                 <div class="bg-pink-soft p-5 rounded-2xl border-2 border-pink-main mb-8 relative z-10 shadow-sm">
                     <h5 class="font-bold text-pink-deep text-sm mb-3"><i class="fa-solid fa-camera-retro mr-2 text-pink-deep"></i> เขียนรีวิว / แนบรูปหลักฐานการซื้อขายของคุณ</h5>
                     <div class="space-y-3">
@@ -324,7 +322,7 @@
                     </div>
                 </div>
 
-                <!-- ระบบหลังบ้าน (Admin Control Panel - ซ่อนไว้) -->
+                <!-- ระบบหลังบ้าน (Admin Control Panel) -->
                 <div id="admin-panel" class="hidden bg-pink-soft p-5 rounded-2xl border-2 border-pink-deep mb-6 relative z-10 shadow-inner">
                     <div class="flex justify-between items-center mb-4 border-b border-pink-200 pb-2">
                         <h5 class="font-bold text-pink-deep text-sm"><i class="fa-solid fa-gear mr-2 text-pink-deep"></i> จัดการร้านค้า (Admin Mode Active)</h5>
@@ -332,7 +330,6 @@
                     </div>
 
                     <div class="space-y-4 text-sm">
-                        <!-- เพิ่มรีวิวพร้อมรูปจากเครื่องโดยแอดมิน -->
                         <div class="bg-white p-4 rounded-xl border border-pink-200">
                             <h6 class="font-bold text-pink-deep text-xs mb-2">➕ เพิ่มรีวิว / เครดิต / รูปซื้อขายใหม่</h6>
                             <div class="grid gap-2">
@@ -355,7 +352,6 @@
                             </div>
                         </div>
 
-                        <!-- ตั้งค่าข้อมูลร้านค้า ช่องทางติดต่อ และเปลี่ยนรหัสผ่าน -->
                         <div class="bg-white p-4 rounded-xl border border-pink-200 space-y-3">
                             <h6 class="font-bold text-pink-deep text-xs">✏ ตั้งค่าข้อมูลร้านค้า & เปลี่ยนรหัสผ่าน</h6>
                             <div>
@@ -369,24 +365,22 @@
                             <div>
                                 <label class="block text-[11px] font-bold text-pink-deep mb-1">แก้ไขช่องทางการติดต่อ & ใส่ลิงก์กดเข้าสู่ระบบ:</label>
                                 <input type="text" id="input-fb" placeholder="ชื่อ Facebook" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep mb-1 focus:outline-none">
-                                <input type="text" id="input-fb-link" placeholder="ลิงก์ Facebook (เช่น https://facebook.com/...)" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep mb-2 focus:outline-none">
+                                <input type="text" id="input-fb-link" placeholder="ลิงก์ Facebook" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep mb-2 focus:outline-none">
                                 
                                 <input type="text" id="input-line" placeholder="Line ID" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep mb-1 focus:outline-none">
-                                <input type="text" id="input-line-link" placeholder="ลิงก์ Line (เช่น https://line.me/ti/p/...)" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
+                                <input type="text" id="input-line-link" placeholder="ลิงก์ Line" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
                             </div>
                             <div>
                                 <label class="block text-[11px] font-bold text-pink-deep mb-1">🔑 เปลี่ยนรหัสผ่านระบบหลังบ้านใหม่:</label>
-                                <input type="password" id="input-new-password" placeholder="กรอกรหัสผ่านใหม่ที่ต้องการที่นี่" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
+                                <input type="password" id="input-new-password" placeholder="กรอกรหัสผ่านใหม่ที่ต้องการ" class="w-full px-3 py-1.5 bg-pink-soft border border-pink-main rounded-xl text-xs text-pink-deep focus:outline-none">
                             </div>
                             <button onclick="updateStoreSettings()" class="w-full py-1.5 bg-pink-deep text-white text-xs font-bold rounded-xl hover:bg-pink-700 transition shadow-sm">บันทึกการตั้งค่าทั้งหมด</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- รายการรีวิว (แสดงจำกัด 5 คนแรก + ปุ่มดูเพิ่มเติม) -->
-                <div id="reviews-container" class="space-y-4 relative z-10">
-                    <!-- รีวิวจะถูกโหลดขึ้นมาอัตโนมัติจาก LocalStorage -->
-                </div>
+                <!-- รายการรีวิว -->
+                <div id="reviews-container" class="space-y-4 relative z-10"></div>
 
                 <!-- ปุ่มดูเพิ่มเติมรีวิวทั้งหมด -->
                 <div id="load-more-container" class="mt-6 text-center hidden">
@@ -405,12 +399,10 @@
             <div class="p-8 bg-white relative">
                 <h4 class="font-bold text-pink-deep mb-4 text-center"><i class="fa-solid fa-address-card mr-2 text-pink-main"></i> ช่องทางการติดต่อ</h4>
                 <div class="max-w-md mx-auto space-y-3">
-                    <!-- LINE -->
                     <a id="link-line-channel" href="#" target="_blank" class="flex items-center p-3 bg-pink-soft text-pink-deep rounded-2xl border-2 border-pink-main shadow-sm hover:scale-[1.02] transition block">
                         <i class="fa-brands fa-line text-3xl mr-4 ml-2 text-pink-deep"></i>
                         <div><p class="font-bold text-sm">LINE Official (กดเพื่อแชท)</p><p id="display-line" class="text-xs opacity-80">@352gmaft</p></div>
                     </a>
-                    <!-- Facebook -->
                     <a id="link-fb-channel" href="#" target="_blank" class="flex items-center p-3 bg-pink-soft text-pink-deep rounded-2xl border-2 border-pink-main shadow-sm hover:scale-[1.02] transition block">
                         <i class="fa-brands fa-facebook text-3xl mr-4 ml-2 text-pink-main"></i>
                         <div><p class="font-bold text-sm">Facebook Page (กดเพื่อเข้าชม)</p><p id="display-fb" class="text-xs opacity-80">s𑄝l݂mua݁yiꫀིྀა ィ</p></div>
@@ -428,8 +420,11 @@
     </div>
 
     <script>
-        // โหลดข้อมูลเริ่มต้นจาก LocalStorage หรือค่าเริ่มต้น
-        let storeData = JSON.parse(localStorage.getItem('muay_shop_settings')) || {
+        // กำหนดค่า API Key และ Bin ID ของ JSONBin.io ที่คุณให้มา
+        const BIN_ID = '6ac104eeac6210605a0f93a7';
+        const API_KEY = '$2a$10$R6oEPi9JbFrhp/wFED0s0uc0oWEwApNbF6zgE7tkm6TEBdgbhY1ru';
+
+        let storeData = {
             title: "Review For Muay Y Shop",
             logo: "",
             fbName: "s𑄝l݂mua݁yiꫀིྀა ィ",
@@ -439,7 +434,7 @@
             adminPwd: "1234"
         };
 
-        let reviewsData = JSON.parse(localStorage.getItem('muay_shop_reviews')) || [
+        let reviewsData = [
             {
                 name: "คุณแอม (ลูกค้าประจำ)",
                 stars: 5,
@@ -456,7 +451,45 @@
 
         let showAllReviews = false;
 
-        // สร้างเอฟเฟกต์ดาวสีขาววิบวับเฉพาะหน้าแรก
+        // ฟังก์ชันดึงข้อมูลจาก Cloud (JSONBin) เมื่อเปิดเว็บ
+        async function loadFromCloud() {
+            try {
+                const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+                    headers: {
+                        'X-Master-Key': API_KEY
+                    }
+                });
+                const result = await response.json();
+                if (result && result.record) {
+                    if (result.record.storeData) storeData = result.record.storeData;
+                    if (result.record.reviewsData) reviewsData = result.record.reviewsData;
+                }
+            } catch (error) {
+                console.log("Using default or cached data due to network error.");
+            }
+            initShopDisplay();
+        }
+
+        // ฟังก์ชันบันทึกข้อมูลขึ้น Cloud (JSONBin) ทุกครั้งที่มีการเปลี่ยนแปลง
+        async function saveToCloud() {
+            try {
+                await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': API_KEY
+                    },
+                    body: JSON.stringify({
+                        storeData: storeData,
+                        reviewsData: reviewsData
+                    })
+                });
+            } catch (error) {
+                console.error("Error saving to cloud:", error);
+                alert("เกิดข้อผิดพลาดในการบันทึกข้อมูลลงระบบคลาวด์");
+            }
+        }
+
         function createFloatingSVGs() {
             const container = document.getElementById('floating-emojis');
             const items = ['★', '✦', '✧', '⭐', '⋆'];
@@ -472,7 +505,6 @@
             }
         }
 
-        // โหลดข้อมูลแสดงผลทั้งหมดลงหน้าเว็บ
         function initShopDisplay() {
             document.getElementById('splash-title-display').innerText = storeData.title;
             document.getElementById('splash-fb-display').innerText = "fb : " + storeData.fbName;
@@ -492,7 +524,6 @@
             document.getElementById('display-line').innerText = storeData.lineId;
             document.getElementById('link-line-channel').href = storeData.lineLink || '#';
 
-            // เติมช่องข้อมูลหลังบ้าน
             document.getElementById('input-store-name').value = storeData.title;
             document.getElementById('input-fb').value = storeData.fbName;
             document.getElementById('input-fb-link').value = storeData.fbLink;
@@ -515,7 +546,6 @@
             }, 800);
         }
 
-        // แปลงไฟล์รูปภาพเป็น Base64 เพื่อเก็บบันทึกถาวรในเครื่อง
         function convertFileToBase64(fileInput, callback) {
             const file = fileInput.files[0];
             if (!file) {
@@ -529,7 +559,6 @@
             reader.readAsDataURL(file);
         }
 
-        // เรนเดอร์รายการรีวิวทั้งหมด
         function renderReviews() {
             const container = document.getElementById('reviews-container');
             container.innerHTML = '';
@@ -606,7 +635,7 @@
             renderReviews();
         }
 
-        function updateStoreSettings() {
+        async function updateStoreSettings() {
             storeData.title = document.getElementById('input-store-name').value.trim() || storeData.title;
             storeData.fbName = document.getElementById('input-fb').value.trim() || storeData.fbName;
             storeData.fbLink = document.getElementById('input-fb-link').value.trim() || storeData.fbLink;
@@ -617,21 +646,21 @@
             if (newPwd) {
                 storeData.adminPwd = newPwd;
                 document.getElementById('input-new-password').value = '';
-                alert('เปลี่ยนและบันทึกรหัสผ่านใหม่เรียบร้อยแล้วค่ะ! อย่าลืมจำรหัสผ่านนี้นะคะ 🔒');
+                alert('เปลี่ยนรหัสผ่านหลังบ้านใหม่เรียบร้อยแล้วค่ะ! 🔒');
             }
 
             const logoInput = document.getElementById('input-logo-file');
-            convertFileToBase64(logoInput, function(base64Img) {
+            convertFileToBase64(logoInput, async function(base64Img) {
                 if (base64Img) {
                     storeData.logo = base64Img;
                 }
-                localStorage.setItem('muay_shop_settings', JSON.stringify(storeData));
+                await saveToCloud();
                 initShopDisplay();
-                alert('บันทึกการตั้งค่าร้านค้าเรียบร้อยแล้วค่ะ! ✨');
+                alert('บันทึกการตั้งค่าร้านค้าลงคลาวด์เรียบร้อยแล้วค่ะ! ✨');
             });
         }
 
-        function submitVisitorReview() {
+        async function submitVisitorReview() {
             const name = document.getElementById('visitor-name').value.trim();
             const stars = parseInt(document.getElementById('visitor-stars').value);
             const text = document.getElementById('visitor-comment').value.trim();
@@ -642,7 +671,7 @@
                 return;
             }
 
-            convertFileToBase64(fileInput, function(base64Img) {
+            convertFileToBase64(fileInput, async function(base64Img) {
                 const newRev = {
                     name: name,
                     stars: stars,
@@ -651,18 +680,18 @@
                 };
 
                 reviewsData.unshift(newRev);
-                localStorage.setItem('muay_shop_reviews', JSON.stringify(reviewsData));
+                await saveToCloud();
 
                 document.getElementById('visitor-name').value = '';
                 document.getElementById('visitor-comment').value = '';
                 document.getElementById('visitor-img-file').value = '';
 
                 renderReviews();
-                alert('ขอบคุณสำหรับรีวิวและหลักฐานการซื้อขายค่ะ! 🎉 (บันทึกข้อมูลเรียบร้อย)');
+                alert('ขอบคุณสำหรับรีวิวและหลักฐานการซื้อขายค่ะ! 🎉 (บันทึกข้อมูลออนไลน์แล้ว)');
             });
         }
 
-        function addNewReview() {
+        async function addNewReview() {
             const name = document.getElementById('new-reviewer-name').value.trim();
             const stars = parseInt(document.getElementById('new-review-stars').value);
             const text = document.getElementById('new-review-text').value.trim();
@@ -673,7 +702,7 @@
                 return;
             }
 
-            convertFileToBase64(fileInput, function(base64Img) {
+            convertFileToBase64(fileInput, async function(base64Img) {
                 const newRev = {
                     name: name,
                     stars: stars,
@@ -682,28 +711,28 @@
                 };
 
                 reviewsData.unshift(newRev);
-                localStorage.setItem('muay_shop_reviews', JSON.stringify(reviewsData));
+                await saveToCloud();
 
                 document.getElementById('new-reviewer-name').value = '';
                 document.getElementById('new-review-text').value = '';
                 document.getElementById('new-review-img-file').value = '';
 
                 renderReviews();
-                alert('เพิ่มรีวิวสำเร็จแล้วค่ะ! 🎉');
+                alert('เพิ่มรีวิวสำเร็จและบันทึกลงคลาวด์แล้วค่ะ! 🎉');
             });
         }
 
-        function deleteReview(index) {
+        async function deleteReview(index) {
             if (confirm('ต้องการลบคอมเมนต์หรือรีวิวนี้ใช่ไหมคะ?')) {
                 reviewsData.splice(index, 1);
-                localStorage.setItem('muay_shop_reviews', JSON.stringify(reviewsData));
+                await saveToCloud();
                 renderReviews();
             }
         }
 
         window.onload = function() {
             createFloatingSVGs();
-            initShopDisplay();
+            loadFromCloud(); // โหลดข้อมูลล่าสุดจาก Cloud ทันทีที่เปิดเว็บ
         };
     </script>
 </body>
