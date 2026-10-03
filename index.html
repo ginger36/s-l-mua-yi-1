@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>review for muay y shop ✨</title>
+    <!-- นำเข้าฟอนต์ Google Fonts สไตล์น่ารักๆ (Itim และ Prompt) -->
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-cream: #fffaf5;
@@ -17,11 +19,13 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Prompt', 'Segoe UI', Tahoma, sans-serif;
             background-color: var(--bg-cream);
             color: var(--text-main);
             margin: 0;
             padding: 20px;
+            background-image: radial-gradient(#ffd6e0 1px, transparent 1px);
+            background-size: 24px 24px;
         }
 
         .layout-wrapper {
@@ -37,11 +41,13 @@
         /* เมนูด้านบน สลับมุมมอง */
         .view-switcher {
             background: var(--sidebar-bg);
-            padding: 10px 20px;
+            padding: 12px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px dashed var(--pink-main);
+            font-family: 'Itim', cursive;
+            font-size: 1.1rem;
         }
 
         .view-switcher button {
@@ -52,41 +58,53 @@
             border-radius: 12px;
             cursor: pointer;
             font-weight: bold;
+            font-family: 'Itim', cursive;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(255, 143, 171, 0.3);
             transition: 0.2s;
         }
 
         .view-switcher button:hover {
             background-color: var(--pink-hover);
+            transform: translateY(-2px);
         }
 
         /* ส่วนหัวเว็บ (Header) */
         .store-header {
             text-align: center;
-            padding: 30px 20px 20px;
+            padding: 35px 20px 25px;
             background: linear-gradient(to bottom, #fff5f7, #ffffff);
+            position: relative;
         }
 
         .store-avatar {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--pink-main);
-            box-shadow: 0 4px 12px rgba(255, 143, 171, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 143, 171, 0.4);
             margin-bottom: 10px;
         }
 
         h1 {
             margin: 5px 0;
             color: #d85a7d;
-            font-size: 2rem;
+            font-size: 2.3rem;
+            font-family: 'Itim', cursive;
+            letter-spacing: 1px;
         }
 
         .contact-info {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-sub);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             line-height: 1.6;
+            background: var(--pink-light);
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: 500;
         }
 
         /* กล่องสถิติคะแนน */
@@ -98,9 +116,10 @@
             background: var(--sidebar-bg);
             max-width: 650px;
             margin: 0 auto 30px;
-            padding: 20px;
+            padding: 22px;
             border-radius: 20px;
             border: 1px solid var(--pink-light);
+            box-shadow: 0 6px 15px rgba(255, 214, 224, 0.4);
         }
 
         .rating-number {
@@ -109,8 +128,9 @@
 
         .rating-number h2 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #d85a7d;
+            font-family: 'Itim', cursive;
         }
 
         .rating-bars {
@@ -122,28 +142,29 @@
             display: flex;
             align-items: center;
             font-size: 0.85rem;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             gap: 8px;
+            color: var(--text-sub);
         }
 
         .bar-container {
             flex-grow: 1;
             background: #fff;
-            height: 8px;
-            border-radius: 4px;
+            height: 9px;
+            border-radius: 6px;
             overflow: hidden;
             border: 1px solid #ffd6e0;
         }
 
         .bar-fill {
-            background: var(--pink-main);
+            background: linear-gradient(90deg, var(--pink-main), var(--pink-hover));
             height: 100%;
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         /* พื้นที่เนื้อหาหลัก */
         .content-section {
-            padding: 0 30px 30px;
+            padding: 0 35px 35px;
         }
 
         /* การจัดการหลังบ้าน (Admin Layout) */
@@ -160,11 +181,11 @@
         }
 
         .admin-menu-item {
-            padding: 10px 15px;
+            padding: 12px 15px;
             margin-bottom: 8px;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 500;
             color: var(--text-main);
             transition: 0.2s;
         }
@@ -172,88 +193,113 @@
         .admin-menu-item:hover, .admin-menu-item.active {
             background-color: var(--pink-main);
             color: white;
+            box-shadow: 0 4px 10px rgba(255, 143, 171, 0.3);
         }
 
         .admin-content {
             flex-grow: 1;
-            padding: 25px;
+            padding: 30px;
         }
 
         /* ฟอร์มและปุ่มต่างๆ */
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #d85a7d;
         }
 
         input[type="text"], select, textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ffccd5;
-            border-radius: 10px;
+            padding: 12px;
+            border: 1.5px solid #ffccd5;
+            border-radius: 12px;
             box-sizing: border-box;
             font-family: inherit;
+            background-color: #fffdfd;
+            transition: 0.2s;
+        }
+
+        input[type="text"]:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--pink-main);
+            box-shadow: 0 0 8px rgba(255, 143, 171, 0.3);
         }
 
         textarea {
             resize: vertical;
-            height: 80px;
+            height: 90px;
         }
 
         button.btn-main {
             background-color: var(--pink-main);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
+            padding: 12px 24px;
+            border-radius: 12px;
             cursor: pointer;
             font-weight: bold;
+            font-family: 'Itim', cursive;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(255, 143, 171, 0.35);
             transition: 0.2s;
         }
 
         button.btn-main:hover {
             background-color: var(--pink-hover);
+            transform: translateY(-2px);
         }
 
         /* รายการรีวิว (Customer View Grid) */
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
         }
 
         .review-card {
             background: #fffdfc;
-            border: 1px solid #ffd6e0;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(255, 214, 224, 0.2);
+            border: 1.5px solid #ffd6e0;
+            padding: 18px;
+            border-radius: 18px;
+            box-shadow: 0 6px 15px rgba(255, 214, 224, 0.25);
             position: relative;
+            transition: 0.2s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(255, 179, 198, 0.35);
         }
 
         .review-img {
             width: 100%;
-            height: 140px;
+            height: 150px;
             object-fit: cover;
-            border-radius: 10px;
-            margin-top: 10px;
-            border: 1px solid #eee;
+            border-radius: 12px;
+            margin-top: 12px;
+            border: 1px solid #ffccd5;
         }
 
         .delete-btn {
             background-color: #ff4d6d;
             color: white;
             border: none;
-            padding: 4px 8px;
-            font-size: 0.75rem;
-            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border-radius: 10px;
             cursor: pointer;
-            margin-top: 10px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .delete-btn:hover {
+            background-color: #d90429;
         }
 
         /* ซ่อน/แสดงส่วนต่างๆ ตามโหมด */
@@ -266,7 +312,7 @@
     <!-- แถบสลับหน้าเว็บกับหลังบ้าน -->
     <div class="view-switcher">
         <span>✨ โหมดจำลอง: <strong id="current-mode-text">หน้าแสดงผลลูกค้า (Customer View)</strong></span>
-        <button onclick="toggleAdminMode()">🔄 สลับไปหน้าหลังบ้าน / หน้าลูกค้า</button>
+        <button onclick="toggleAdminMode()">🔄 สลับหน้าเว็บ / หลังบ้าน</button>
     </div>
 
     <!-- ==================== หน้าลูกค้า (Customer View) ==================== -->
@@ -275,8 +321,7 @@
             <img id="display-store-avatar" src="https://i.imgur.com/6VBx3io.png" alt="Store Logo" class="store-avatar">
             <h1 id="display-store-title">review for muay y shop</h1>
             <div class="contact-info">
-                fb : s𑄝l݂mua݁yiꫀིྀა ィ<br>
-                id line : @352gmaft
+                🌸 fb : s𑄝l݂mua݁yiꫀིྀა ィ &nbsp;|&nbsp; id line : @352gmaft 🌸
             </div>
 
             <!-- คะแนนรวมและสถิติ -->
@@ -284,7 +329,7 @@
                 <div class="rating-number">
                     <h2 id="display-avg">4.9</h2>
                     <div style="color: #ffa41c; font-size: 1.1rem;">⭐⭐⭐⭐⭐</div>
-                    <div style="font-size: 0.8rem; color: var(--text-sub); margin-top: 4px;">จาก <span id="display-total">1</span> รีวิว</div>
+                    <div style="font-size: 0.85rem; color: var(--text-sub); margin-top: 4px; font-weight: 500;">จาก <span id="display-total">1</span> รีวิว</div>
                 </div>
                 <div class="rating-bars">
                     <div class="bar-row"><span>ดีมาก</span><div class="bar-container"><div class="bar-fill" style="width: 100%;"></div></div><span>100%</span></div>
@@ -297,12 +342,12 @@
 
         <div class="content-section">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h3 style="margin: 0; color: #d85a7d;">💬 รีวิวและความประทับใจจากลูกค้า</h3>
+                <h3 style="margin: 0; color: #d85a7d; font-family: 'Itim', cursive; font-size: 1.4rem;">💬 รีวิวและความประทับใจจากลูกค้า</h3>
             </div>
 
             <!-- ฟอร์มฝากรีวิวสำหรับลูกค้า -->
-            <div style="background: var(--sidebar-bg); padding: 20px; border-radius: 15px; margin-bottom: 25px; border: 1px dashed var(--pink-main);">
-                <h4 style="margin-top: 0; color: #d85a7d;">ฝากเครดิต / เขียนรีวิวใหม่</h4>
+            <div style="background: var(--sidebar-bg); padding: 22px; border-radius: 20px; margin-bottom: 30px; border: 1.5px dashed var(--pink-main); box-shadow: 0 4px 15px rgba(255, 214, 224, 0.3);">
+                <h4 style="margin-top: 0; color: #d85a7d; font-family: 'Itim', cursive; font-size: 1.2rem;">✨ ฝากเครดิต / เขียนรีวิวใหม่</h4>
                 <form id="customer-review-form" onsubmit="handleCustomerSubmit(event)">
                     <div class="form-group">
                         <label>ชื่อลูกค้า / ลิงก์เครดิต:</label>
@@ -323,7 +368,7 @@
                     </div>
                     <div class="form-group">
                         <label>แนบรูปภาพรีวิว / สลิป:</label>
-                        <input type="file" id="new-cust-img" accept="image/*" style="background: white; padding: 5px; border-radius: 8px;">
+                        <input type="file" id="new-cust-img" accept="image/*" style="background: white; padding: 8px; border-radius: 10px; border: 1px solid #ffccd5;">
                     </div>
                     <button type="submit" class="btn-main">ส่งรีวิว / เพิ่มเครดิต 💖</button>
                 </form>
@@ -347,7 +392,7 @@
             <div class="admin-content">
                 <!-- Tab 1: จัดการรีวิว -->
                 <div id="admin-tab-manage">
-                    <h3>🛠️ จัดการรีวิวทั้งหมด (ลบคอมเม้นต์ปั่นเครดิต)</h3>
+                    <h3 style="color: #d85a7d; font-family: 'Itim', cursive;">🛠️ จัดการรีวิวทั้งหมด (ลบคอมเม้นต์ปั่นเครดิต)</h3>
                     <div id="admin-reviews-list">
                         <!-- รายการสำหรับแอดมินลบ -->
                     </div>
@@ -355,7 +400,7 @@
 
                 <!-- Tab 2: โปรไฟล์ร้าน -->
                 <div id="admin-tab-profile" class="hidden">
-                    <h3>✨ แก้ไขข้อมูลโปรไฟล์ร้านค้า</h3>
+                    <h3 style="color: #d85a7d; font-family: 'Itim', cursive;">✨ แก้ไขข้อมูลโปรไฟล์ร้านค้า</h3>
                     <div class="form-group">
                         <label>ชื่อร้านค้า:</label>
                         <input type="text" id="admin-input-name" value="review for muay y shop">
@@ -369,7 +414,7 @@
 
                 <!-- Tab 3: ช่องทางติดต่อ -->
                 <div id="admin-tab-contact" class="hidden">
-                    <h3>📞 ตั้งค่าช่องทางติดต่อ</h3>
+                    <h3 style="color: #d85a7d; font-family: 'Itim', cursive;">📞 ตั้งค่าช่องทางติดต่อ</h3>
                     <div class="form-group">
                         <label>Facebook:</label>
                         <input type="text" value="s𑄝l݂mua݁yiꫀིྀა ィ">
@@ -386,7 +431,6 @@
 </div>
 
 <script>
-    // ข้อมูลจำลองเริ่มต้น
     let storeInfo = {
         name: "review for muay y shop",
         avatar: "https://i.imgur.com/6VBx3io.png"
@@ -394,7 +438,7 @@
 
     let reviewsData = [
         {
-            name: "น้องฟ้า",
+            name: "น้องฟ้า 💖",
             rating: 5,
             date: "02/10/2026",
             comment: "สินค้าดีมากๆ ส่งไวมาก แพ็คของน่ารักมากค่ะ 💖",
@@ -404,7 +448,6 @@
 
     let isAdminMode = false;
 
-    // สลับโหมดระหว่างหน้าลูกค้ากับหลังบ้าน
     function toggleAdminMode() {
         isAdminMode = !isAdminMode;
         if (isAdminMode) {
@@ -426,7 +469,6 @@
         }
     }
 
-    // สลับแท็บในหลังบ้าน
     function switchAdminTab(tabName) {
         document.getElementById('admin-tab-manage').classList.add('hidden');
         document.getElementById('admin-tab-profile').classList.add('hidden');
@@ -436,13 +478,11 @@
         if(tabName === 'profile') document.getElementById('admin-tab-profile').classList.remove('hidden');
         if(tabName === 'contact') document.getElementById('admin-tab-contact').classList.remove('hidden');
 
-        // จัดการคลาส active เมนู
         let items = document.querySelectorAll('.admin-menu-item');
         items.forEach(el => el.classList.remove('active'));
         event.target.classList.add('active');
     }
 
-    // ลูกค้าส่งรีวิวใหม่
     function handleCustomerSubmit(event) {
         event.preventDefault();
         let name = document.getElementById('new-cust-name').value;
@@ -471,7 +511,6 @@
         alert("ส่งรีวิวสำเร็จ ขอบคุณมากๆ เลยนะค้า! ✨");
     }
 
-    // ลบรีวิว (จัดการรีวิวปั่นเครดิต)
     function deleteReview(index) {
         if(confirm("ต้องการลบรีวิวนี้ใช่หรือไม่?")) {
             reviewsData.splice(index, 1);
@@ -480,7 +519,6 @@
         }
     }
 
-    // บันทึกโปรไฟล์ร้าน
     function saveStoreProfile() {
         storeInfo.name = document.getElementById('admin-input-name').value;
         storeInfo.avatar = document.getElementById('admin-input-img').value;
@@ -490,7 +528,6 @@
         alert("บันทึกข้อมูลโปรไฟล์ร้านเรียบร้อย!");
     }
 
-    // เรนเดอร์หน้าลูกค้า
     function renderCustomerReviews() {
         let grid = document.getElementById('customer-reviews-grid');
         grid.innerHTML = "";
@@ -511,10 +548,10 @@
             let card = document.createElement('div');
             card.className = "review-card";
             card.innerHTML = `
-                <div style="font-weight: bold; color: #d85a7d;">👤 ${rev.name}</div>
+                <div style="font-weight: bold; color: #d85a7d; font-size: 1rem;">👤 ${rev.name}</div>
                 <div style="font-size: 0.9rem; margin: 4px 0;">${stars}</div>
-                <p style="font-size: 0.9rem; margin: 6px 0; line-height: 1.4;">${rev.comment}</p>
-                <div style="font-size: 0.75rem; color: var(--text-sub);">${rev.date}</div>
+                <p style="font-size: 0.9rem; margin: 8px 0; line-height: 1.5; color: var(--text-main);">${rev.comment}</p>
+                <div style="font-size: 0.75rem; color: var(--text-sub); font-weight: 500;">📅 ${rev.date}</div>
                 ${imgTag}
             `;
             grid.appendChild(card);
@@ -525,23 +562,22 @@
         document.getElementById('display-total').innerText = reviewsData.length;
     }
 
-    // เรนเดอร์หน้าจัดการหลังบ้าน
     function renderAdminReviews() {
         let list = document.getElementById('admin-reviews-list');
         list.innerHTML = "";
 
         if (reviewsData.length === 0) {
-            list.innerHTML = "<p>ไม่มีรายการรีวิวในระบบ</p>";
+            list.innerHTML = "<p style='color: var(--text-sub);'>ไม่มีรายการรีวิวในระบบ</p>";
             return;
         }
 
         reviewsData.forEach((rev, index) => {
             let item = document.createElement('div');
-            item.style.cssText = "background: white; padding: 12px; border-radius: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ffd6e0;";
+            item.style.cssText = "background: white; padding: 14px; border-radius: 12px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; border: 1.5px solid #ffd6e0; box-shadow: 0 2px 8px rgba(255, 214, 224, 0.2);";
             item.innerHTML = `
                 <div>
-                    <strong>👤 ${rev.name}</strong> (${rev.rating} ดาว) <br>
-                    <span style="font-size: 0.85rem; color: var(--text-sub);">${rev.comment}</span>
+                    <strong style="color: #d85a7d;">👤 ${rev.name}</strong> <span style="font-size: 0.85rem; color: var(--text-sub);">(${rev.rating} ดาว)</span> <br>
+                    <span style="font-size: 0.9rem; color: var(--text-main);">${rev.comment}</span>
                 </div>
                 <button class="delete-btn" onclick="deleteReview(${index})">ลบรีวิว</button>
             `;
@@ -549,7 +585,6 @@
         });
     }
 
-    // เริ่มต้นรัน
     renderCustomerReviews();
 </script>
 
